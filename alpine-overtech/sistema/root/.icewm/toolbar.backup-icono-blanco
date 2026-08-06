@@ -1,0 +1,10 @@
+# This is an example for icewm toolbar definition file.
+# It will be installed as /usr/share/icewm/toolbar.
+# Place your variants in /etc/icewm or in $HOME/.icewm since
+# modifications to this file will be overwritten when you reinstall icewm.
+#
+prog "LXTerminal" /usr/share/icons/hicolor/128x128/apps/lxterminal.png lxterminal
+prog "Web browser" web-browser xdg-open about:blank
+
+prog "Dillo" dillo dillo
+prog "OpenMediaCenter" openmediacenter lxterminal -e /usr/local/bin/omc

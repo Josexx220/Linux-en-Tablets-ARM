@@ -1,0 +1,28 @@
+# FONDO FIJO DE JOSE
+DesktopBackgroundImage="/home/jose/fondo-jose.jpeg"
+DesktopBackgroundColor="#000000"
+DesktopBackgroundCenter=0
+DesktopBackgroundScaled=1
+
+# MOSTRAR ACCESOS DIRECTOS EN EL PANEL
+TaskBarShowQuickLaunch=1
+
+# Batería de la tablet
+
+# INDICADOR LIVIANO DE RED Q8
+
+# INDICADOR LIVIANO DE RED Q8
+TaskBarShowNetStatus=1
+NetDevice="wlan0"
+
+# ICONOS VISIBLES Q8
+SmallIconSize=24
+LargeIconSize=32
+
+# BATERÍA PRINCIPAL Q8
+TaskBarShowAPMStatus=1
+TaskBarShowAPMAuto=1
+TaskBarShowAPMTime=0
+TaskBarShowAPMGraph=0
+BatteryPollingPeriod=5
+AcpiIgnoreBatteries="hid-fc:69:a4:00:0b:e0-battery"

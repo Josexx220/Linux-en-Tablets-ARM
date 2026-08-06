@@ -1,0 +1,2 @@
+tar: Eliminando la `/' inicial de los nombres
+tar: Eliminando la `/' inicial de los objetivos de los enlaces

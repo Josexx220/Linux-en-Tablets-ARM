@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Archivos
+Comment=Explorador de archivos
+Exec=env DISPLAY=:0 HOME=/root pcmanfm
+Icon=folder
+Terminal=false

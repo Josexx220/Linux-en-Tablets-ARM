@@ -1,0 +1,11 @@
+[Unit]
+Description=Mostrar direccion IP de Wi-Fi en tty1
+After=network-online.target getty@tty1.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/mostrar-ip-tty1
+
+[Install]
+WantedBy=multi-user.target

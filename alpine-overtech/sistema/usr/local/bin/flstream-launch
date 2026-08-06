@@ -1,0 +1,4 @@
+export HOME=/root
+export DISPLAY=:0
+export PATH=/system/bin:/usr/local/bin:/bin:/sbin:/usr/bin:/usr/sbin
+exec /usr/local/bin/flstream

@@ -1,0 +1,15 @@
+# ACCESOS DIRECTOS Q8
+
+prog "Archivos" /usr/share/icons/Adwaita/48x48/legacy/system-file-manager.png pcmanfm
+prog "LXTerminal" /usr/share/icons/hicolor/128x128/apps/lxterminal.png lxterminal
+prog "Dillo" /usr/local/share/icons/hicolor/128x128/apps/dillo.png /usr/local/bin/dillo
+
+separator
+
+prog "Configurar Wi-Fi" /usr/share/icons/Adwaita/48x48/legacy/network-wireless.png wpa_gui -i wlan0
+
+separator
+
+prog "Bajar volumen" /usr/share/icons/Adwaita/48x48/legacy/audio-volume-low.png /usr/local/bin/q8-volumen-bajar
+prog "Subir volumen" /usr/share/icons/Adwaita/48x48/legacy/audio-volume-high.png /usr/local/bin/q8-volumen-subir
+prog "Silenciar" /usr/share/icons/Adwaita/48x48/legacy/audio-volume-muted.png /usr/local/bin/q8-volumen-silenciar

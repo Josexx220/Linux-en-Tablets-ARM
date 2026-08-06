@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Jose IA
+Comment=Asistente de inteligencia artificial
+Exec=env LANG=es_AR LC_ALL=es_AR /usr/bin/lxterminal --title=Jose-IA -e /usr/local/bin/jose-ia
+Icon=/usr/share/pixmaps/jose-ia.png
+Terminal=false
+Categories=Utility;

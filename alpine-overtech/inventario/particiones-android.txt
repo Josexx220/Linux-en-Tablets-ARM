@@ -1,0 +1,18 @@
+Filesystem                Size      Used Available Use% Mounted on
+tmpfs                   247.9M    128.0K    247.8M   0% /dev
+none                    247.9M     12.0K    247.9M   0% /sys/fs/cgroup
+tmpfs                   247.9M         0    247.9M   0% /mnt/secure
+tmpfs                   247.9M         0    247.9M   0% /mnt/asec
+tmpfs                   247.9M         0    247.9M   0% /mnt/obb
+/dev/block/by-name/system
+                        755.9M    508.3M    247.6M  67% /system
+/dev/block/by-name/cache
+                        503.9M      8.4M    495.5M   2% /cache
+/dev/block/by-name/UDISK
+                          5.6G      4.3G      1.3G  77% /data
+/dev/fuse                 5.6G      4.3G      1.3G  77% /mnt/shell/emulated
+tmpfs                   247.9M    128.0K    247.8M   0% /data/local/linux/rootfs-jwm/dev
+/dev/block/by-name/system
+                        755.9M    508.3M    247.6M  67% /data/local/linux/rootfs-jwm/system
+/dev/block/by-name/UDISK
+                          5.6G      4.3G      1.3G  77% /data/local/linux/rootfs-jwm/data

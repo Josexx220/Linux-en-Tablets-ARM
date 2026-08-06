@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=IPTV Center
+Comment=Reproductor IPTV liviano para la tablet
+Exec=/usr/local/bin/run-iptvcenter
+Icon=iptvcenter
+Terminal=false
+Categories=AudioVideo;Video;Player;

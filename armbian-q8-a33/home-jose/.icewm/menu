@@ -1,0 +1,9 @@
+# Menú dinámico: lee automáticamente las aplicaciones instaladas
+menuprog "Aplicaciones" folder icewm-menu-fdo
+
+separator
+
+prog "LXTerminal" utilities-terminal lxterminal
+prog "Terminal como administrador" utilities-terminal lxterminal -e sudo -i
+
+prog "Configuración Wi-Fi" network-wireless wpa_gui -i wlan0

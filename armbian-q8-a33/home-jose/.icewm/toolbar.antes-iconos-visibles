@@ -1,0 +1,11 @@
+prog "Archivos" /usr/share/icons/Adwaita/48x48/legacy/system-file-manager.png pcmanfm
+prog "LXTerminal" /usr/share/icons/hicolor/128x128/apps/lxterminal.png lxterminal
+prog "Dillo" /usr/local/share/icons/hicolor/128x128/apps/dillo.png /usr/local/bin/dillo
+
+# CONFIGURAR WIFI Q8
+prog "Wi-Fi" network-wireless wpa_gui -i wlan0
+
+# CONTROLES LIVIANOS DE VOLUMEN Q8
+prog "Bajar volumen" audio-volume-low /usr/local/bin/q8-volumen-bajar
+prog "Subir volumen" audio-volume-high /usr/local/bin/q8-volumen-subir
+prog "Silenciar" audio-volume-muted /usr/local/bin/q8-volumen-silenciar

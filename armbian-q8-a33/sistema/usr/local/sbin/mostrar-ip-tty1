@@ -1,0 +1,19 @@
+#!/bin/sh
+
+TTY=/dev/tty1
+
+for intento in $(seq 1 60); do
+    IP="$(ip -4 -o addr show wlan0 scope global 2>/dev/null |
+          awk '{split($4,a,"/"); print a[1]; exit}')"
+
+    if [ -n "$IP" ]; then
+        printf '\nWi-Fi conectado\nIP: %s\nSSH: ssh jose@%s\n\n' \
+            "$IP" "$IP" > "$TTY"
+        exit 0
+    fi
+
+    sleep 2
+done
+
+printf '\nWi-Fi sin direccion IP despues de 120 segundos.\n\n' > "$TTY"
+exit 0

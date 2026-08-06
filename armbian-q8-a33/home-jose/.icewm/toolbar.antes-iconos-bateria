@@ -1,0 +1,3 @@
+prog "Archivos" system-file-manager pcmanfm
+prog "LXTerminal" utilities-terminal lxterminal
+prog "Dillo" /usr/local/share/icons/hicolor/128x128/apps/dillo.png /usr/local/bin/dillo

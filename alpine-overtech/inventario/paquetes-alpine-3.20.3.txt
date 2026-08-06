@@ -1,0 +1,558 @@
+7zip-23.01-r0 - File archiver with a high compression ratio
+abiword-3.0.5-r11 - A fully-featured word processor
+adwaita-icon-theme-46.0-r0 - Adwaita icon theme
+agetty-2.40.1-r1 - agetty program from util-linux
+alpine-baselayout-3.6.5-r0 - Alpine base dir structure and init scripts
+alpine-baselayout-data-3.6.5-r0 - Alpine base dir structure and init scripts
+alpine-keys-2.4-r1 - Public keys for Alpine Linux packages
+alsa-lib-1.2.11-r0 - Advanced Linux Sound Architecture (ALSA) library
+alsa-ucm-conf-1.2.11-r1 - ALSA Use Case Manager configuration
+alsa-utils-1.2.11-r1 - Advanced Linux Sound Architecture (ALSA) utilities
+aom-libs-3.9.1-r0 - Alliance for Open Media (AOM) AV1 codec SDK (libraries)
+apk-tools-2.14.4-r1 - Alpine Package Keeper - package manager for alpine
+at-spi2-core-2.52.0-r0 - Protocol definitions and daemon for D-Bus at-spi
+attr-2.5.2-r0 - utilities for managing filesystem extended attributes
+avahi-libs-0.8-r17 - Libraries for avahi run-time use
+binutils-2.42-r1 - Tools necessary to build programs
+blkid-2.40.1-r1 - Block device identification tool from util-linux
+brotli-1.1.0-r2 - Generic lossless compressor
+brotli-dev-1.1.0-r2 - Generic lossless compressor (development files)
+brotli-libs-1.1.0-r2 - Generic lossless compressor (libraries)
+bsd-compat-headers-0.7.2-r6 - BSD compatibility headers (cdefs, queue, tree)
+btop-1.3.2-r1 - Resource monitor
+bubblewrap-0.10.0-r0 - Unprivileged sandboxing tool
+build-base-0.5-r3 - Meta package for build base
+busybox-1.36.1-r31 - Size optimized toolbox of many common UNIX utilities
+busybox-binsh-1.36.1-r31 - busybox ash /bin/sh
+bzip2-dev-1.0.8-r6 - A high-quality data compression program (development files)
+c-ares-1.33.1-r0 - Asynchronous DNS/names resolver library
+ca-certificates-20260413-r0 - Common CA certificates PEM files from Mozilla
+ca-certificates-bundle-20260413-r0 - Pre generated bundle of Mozilla certificates
+cairo-1.18.4-r0 - A vector graphics library
+cairo-dev-1.18.4-r0 - A vector graphics library (development files)
+cairo-gobject-1.18.4-r0 - A vector graphics library (gobject bindings)
+cairo-tools-1.18.4-r0 - A vector graphics library (development tools)
+cdparanoia-libs-10.2-r14 - Libraries for libcdda_paranoia (Paranoia III)
+cfdisk-2.40.1-r1 - Curses based partition table manipulator from util-linux
+cjson-1.7.19-r0 - Lighweight JSON parser in C
+cups-libs-2.4.18-r0 - CUPS libraries
+curl-8.14.1-r2 - URL retrival utility and library
+dbus-1.14.10-r1 - Freedesktop.org message bus system
+dbus-daemon-launch-helper-1.14.10-r1 - DBus SUID launch helper for autospawning
+dbus-libs-1.14.10-r1 - D-BUS access libraries
+dbus-x11-1.14.10-r1 - X11 add-ons for D-BUS
+dialog-1.3.20240307-r0 - Script interpreter providing curses widgets
+dillo-3.2.0-r0 - Fast and small graphical web browser using OpenSSL
+dillo-common-3.2.0-r0 - Fast and small graphical web browser (common files)
+directfb-1.7.7-r8 - Library for hw graphics acceleration, input dev, windowing system on top of the Linux fb device
+dmesg-2.40.1-r1 - dmesg tool from util-linux
+doas-6.8.2-r7 - OpenBSD's temporary privilege escalation tool
+docbook-xml-4.5-r9 - A widely used XML scheme for writing documentation and help
+docbook-xsl-1.79.2-r9 - XML stylesheets for Docbook-xml transformations.
+duktape-2.7.0-r1 - Embeddable Javascript engine with a focus on portability and compact footprint
+dunst-1.11.0-r0 - Customizable and lightweight notification-daemon
+dunstify-1.11.0-r0 - notify-send compatible command with additional features
+e2fsprogs-libs-1.47.0-r5 - Standard Ext2/3/4 filesystem utilities (libraries)
+enchant2-libs-2.7.3-r0 - wrapper library for generic spell checking (v2) (libraries)
+encodings-1.0.7-r1 - X.org font encoding files
+eudev-libs-3.2.14-r2 - Dynamic library to access udev device information
+evince-46.1-r0 - Simple document viewer for GTK+
+evince-libs-46.1-r0 - Simple document viewer for GTK+ (libraries)
+expat-2.8.1-r0 - XML Parser library written in C
+expat-dev-2.8.1-r0 - XML Parser library written in C (development files)
+faac-1.30-r5 - FAAC is an AAC audio encoder.
+fastfetch-2.13.1-r0 - Like neofetch, but much faster because written mostly in C.
+fdk-aac-2.0.2-r4 - Fraunhofer FDK AAC codec library
+feh-3.10.2-r0 - Fast, lightweight image viewer which uses imlib2
+ffmpeg-6.1.1-r8 - Complete and free Internet live audio and video broadcasting solution for Linux/Unix
+ffmpeg-libavcodec-6.1.1-r8 - Complete and free Internet live audio and video broadcasting solution for Linux/Unix (libavcodec library)
+ffmpeg-libavdevice-6.1.1-r8 - Complete and free Internet live audio and video broadcasting solution for Linux/Unix (libavdevice library)
+ffmpeg-libavfilter-6.1.1-r8 - Complete and free Internet live audio and video broadcasting solution for Linux/Unix (libavfilter library)
+ffmpeg-libavformat-6.1.1-r8 - Complete and free Internet live audio and video broadcasting solution for Linux/Unix (libavformat library)
+ffmpeg-libavutil-6.1.1-r8 - Complete and free Internet live audio and video broadcasting solution for Linux/Unix (libavutil library)
+ffmpeg-libpostproc-6.1.1-r8 - Complete and free Internet live audio and video broadcasting solution for Linux/Unix (libpostproc library)
+ffmpeg-libswresample-6.1.1-r8 - Complete and free Internet live audio and video broadcasting solution for Linux/Unix (libswresample library)
+ffmpeg-libswscale-6.1.1-r8 - Complete and free Internet live audio and video broadcasting solution for Linux/Unix (libswscale library)
+ffmpeg4-libavcodec-4.4.4-r7 - Complete and free Internet live audio and video broadcasting solution for Linux/Unix (libavcodec library)
+ffmpeg4-libavformat-4.4.4-r7 - Complete and free Internet live audio and video broadcasting solution for Linux/Unix (libavformat library)
+ffmpeg4-libavutil-4.4.4-r7 - Complete and free Internet live audio and video broadcasting solution for Linux/Unix (libavutil library)
+ffmpeg4-libswresample-4.4.4-r7 - Complete and free Internet live audio and video broadcasting solution for Linux/Unix (libswresample library)
+ffmpeg4-libswscale-4.4.4-r7 - Complete and free Internet live audio and video broadcasting solution for Linux/Unix (libswscale library)
+fftw-double-libs-3.3.10-r5 - Discrete Fourier transform (DFT) library
+fftw-single-libs-3.3.10-r5 - Discrete Fourier transform (DFT) library
+file-5.45-r1 - File type identification utility
+findmnt-2.40.1-r1 - Find mount from util-linux
+flite-2.2-r2 - Small, fast speech synthesis engine (text-to-speech)
+flock-2.40.1-r1 - File locker from util-linux
+fltk-dev-1.3.9-r0 - A cross-platform C++ GUI toolkit (development files)
+font-alias-1.0.5-r0 - X.org font alias files
+font-cursor-misc-1.0.4-r1 - X.org misc font
+font-dejavu-2.37-r5 - Font family based on the Bitstream Vera Fonts with a wider range of characters
+font-misc-misc-1.1.3-r1 - X.org misc font
+fontconfig-2.15.0-r1 - Library for configuring and customizing font access
+fontconfig-dev-2.15.0-r1 - Library for configuring and customizing font access (development files)
+fortify-headers-1.1-r3 - standalone fortify source implementation
+freeciv-client-sdl2-3.1.1-r0 - Free and Open Source empire-building strategy game (sdl2 client)
+freeciv-common-client-3.1.1-r0 - Free and Open Source empire-building strategy game (common files for every clients)
+freeciv-data-3.1.1-r0 - Free and Open Source empire-building strategy game (data files for client and server)
+freeciv-lang-3.1.1-r0 - Languages for package freeciv
+freeciv-server-3.1.1-r0 - Free and Open Source empire-building strategy game (server)
+freetype-2.13.2-r0 - TrueType font rendering library
+freetype-dev-2.13.2-r0 - TrueType font rendering library (development files)
+fribidi-1.0.15-r0 - Free Implementation of the Unicode Bidirectional Algorithm
+fstrim-2.40.1-r1 - File system trim from util-linux
+g++-13.2.1_git20240309-r1 - GNU C++ standard library and compiler
+galculator-2.1.4-r4 - GTK+3 based scientific calculator
+gcc-13.2.1_git20240309-r1 - The GNU Compiler Collection
+gcr-3.41.2-r1 - library for bits of crypto UI and parsing
+gcr-base-3.41.2-r1 - library for bits of crypto UI and parsing (base libraries)
+gdbm-1.23-r1 - GNU dbm is a set of database routines that use extensible hashing
+gdk-pixbuf-2.42.12-r0 - GTK+ image loading library
+gettext-0.22.5-r0 - GNU locale utilities
+gettext-asprintf-0.22.5-r0 - GNU gettext asprintf library
+gettext-dev-0.22.5-r0 - GNU locale utilities (development files)
+gettext-envsubst-0.22.5-r0 - GNU gettext envsubst binary
+gettext-libs-0.22.5-r0 - GNU locale utilities (libraries)
+giflib-5.2.2-r0 - A library for reading and writing GIF images
+glib-2.80.5-r0 - Common C routines used by Gtk+ and other libs
+glib-dev-2.80.5-r0 - Common C routines used by Gtk+ and other libs (development files)
+glib-networking-2.80.0-r0 - Networking support for GLib
+glslang-libs-1.3.261.1-r0 - Khronos reference front-end for GLSL, ESSL, and sample SPIR-V generator (libraries)
+gmp-6.3.0-r1 - free library for arbitrary precision arithmetic
+gnome-keyring-46.1-r1 - GNOME keyring
+gnumeric-1.12.57-r1 - GNOME Spreadsheet Program
+gnumeric-lang-1.12.57-r1 - Languages for package gnumeric
+gnutls-3.8.13-r0 - TLS protocol implementation
+goffice-0.10.57-r0 - Library of document-centric objects and utilities built on top of GLib and Gtk+
+gpm-libs-1.20.7-r4 - A mouse server for the console (libraries)
+graphene-1.10.8-r4 - A thin layer of graphic data types
+graphite2-1.3.14-r6 - reimplementation of the SIL Graphite text processing engine
+gsettings-desktop-schemas-46.0-r0 - A collection of GSettings schemas
+gsm-1.0.22-r3 - Shared libraries for GSM speech compressor
+gspell-1.12.2-r2 - Flexible API to add spell checking to a GTK+ application
+gst-plugins-bad-1.24.10-r0 - GStreamer streaming media framework bad plug-ins
+gst-plugins-base-1.24.10-r0 - GStreamer streaming media framework base plug-ins
+gstreamer-1.24.10-r0 - GStreamer streaming media framework
+gtk+3.0-3.24.43-r0 - The GTK+ Toolkit (v3)
+gtk-update-icon-cache-3.24.43-r0 - The GTK+ Toolkit (v3)
+harfbuzz-8.5.0-r0 - Text shaping library
+harfbuzz-icu-8.5.0-r0 - Harfbuzz ICU support library
+hexdump-2.40.1-r1 - Hexdump from util-linux
+hicolor-icon-theme-0.17-r2 - Freedesktop.org Hicolor icon theme
+htop-3.3.0-r0 - Interactive process viewer
+hwdata-pci-0.382-r0 - Hardware identification and configuration data (pci data)
+hyphen-2.8.8-r3 - Library for high quality hyphenation and justification
+icewm-3.5.0-r0 - Window manager designed for speed, usability and consistency
+icu-data-full-74.2-r1 - Full ICU data
+icu-libs-74.2-r1 - International Components for Unicode library (libraries)
+imath-3.1.12-r0 - C++ and python library of 2D and 3D vector, matrix, and math operations for computer graphics
+imlib2-1.12.2-r0 - Image manipulation library
+isl26-0.26-r1 - An Integer Set Library for the Polyhedral Model
+iso-codes-4.16.0-r0 - ISO codes and their translations
+jack-1.9.22-r4 - The Jack Audio Connection Kit
+jansson-2.14-r4 - lightweight JSON library
+lame-libs-3.100-r5 - An MP3 encoder and graphical frame analyzer (libraries)
+lcms2-2.19-r0 - Color Management Engine
+libacl-2.3.2-r0 - Dynamic library for access control list support
+libao-1.2.2-r2 - Cross-platform audio output library and plugins
+libarchive-3.8.3-r0 - library that can create and read several streaming archive formats
+libass-0.17.2-r0 - Portable library for SSA/ASS subtitle rendering
+libasyncns-0.8-r3 - Asynchronous Name Service Library
+libatk-1.0-2.52.0-r0 - ATK library accessibility interfaces (1.0)
+libatk-bridge-2.0-2.52.0-r0 - GTK+2.0 module that bridges ATK to D-Bus at-spi
+libatomic-13.2.1_git20240309-r1 - GCC Atomic library
+libattr-2.5.2-r0 - utilities for managing filesystem extended attributes (libraries)
+libavif-1.0.4-r0 - Library for encoding and decoding .avif files
+libblkid-2.40.1-r1 - Block device identification library from util-linux
+libbluray-1.3.4-r1 - Library for Blu-Ray disc playback
+libbsd-0.12.2-r0 - commonly-used BSD functions not implemented by all libcs
+libbz2-1.0.8-r6 - Shared library for bz2
+libcaca-0.99_beta20-r3 - graphics library that outputs text instead of pixels
+libcamera-0.3.0-r0 - Linux camera framework
+libcamera-ipa-0.3.0-r0 - Linux camera framework
+libcap-ng-0.8.5-r0 - POSIX capabilities library
+libcap2-2.78-r0 - POSIX 1003.1e capabilities (libraries)
+libcdio-2.1.0-r3 - GNU Compact Disc Input and Control Library
+libcdio-paranoia-10.2.2.0.1-r2 - CD paranoia on top of libcdio
+libcom_err-1.47.0-r5 - Common error description library
+libcrypto3-3.3.7-r0 - Crypto library from openssl
+libcurl-8.14.1-r2 - The multiprotocol file transfer library
+libdav1d-1.4.2-r0 - small and fast AV1 Decoder (libraries)
+libdc1394-2.2.7-r0 - High level programming interface to control IEEE 1394 based cameras
+libde265-1.0.15-r0 - Open h.265 video codec implementation
+libdjvulibre-3.5.28-r4 - Runtime support for the DjVu image format
+libdovi-3.3.0-r0 - Library to read & write Dolby Vision metadata
+libdrm-2.4.120-r0 - Userspace interface to kernel DRM services
+libdrm-dev-2.4.120-r0 - Userspace interface to kernel DRM services (development files)
+libdvdcss-1.4.3-r0 - Library for accessing DVDs like a block device without having to bother about the decryption
+libdvdnav-6.1.1-r1 - a library for sophisticated DVD navigation features
+libdvdread-6.1.3-r2 - Simple foundation for reading DVD video disks
+libeconf-0.6.3-r0 - Enhanced Config File Parser
+libedit-20240517.3.1-r0 - BSD line editing library
+libedit-dev-20240517.3.1-r0 - BSD line editing library (development files)
+libelf-0.191-r0 - Library to read, modify and create ELF files
+libepoxy-1.5.10-r1 - Direct Rendering Manager runtime library
+libevdev-1.13.1-r0 - Kernel Evdev Device Wrapper Library
+libexif-0.6.24-r2 - library to parse an EXIF file and read the data from those tags
+libexpat-2.8.1-r0 - XML Parser library written in C (libraries)
+libfdisk-2.40.1-r1 - Partitioning library for fdisk-like programs
+libffi-3.4.6-r0 - portable, high level programming interface to various calling conventions.
+libffi-dev-3.4.6-r0 - portable, high level programming interface to various calling conventions. (development files)
+libflac-1.4.3-r1 - Free Lossless Audio Codec (libFLAC)
+libfltk-1.3.9-r0 - A cross-platform C++ GUI toolkit
+libfltk_cairo-1.3.9-r0 - A cross-platform C++ GUI toolkit
+libfltk_forms-1.3.9-r0 - A cross-platform C++ GUI toolkit
+libfltk_gl-1.3.9-r0 - A cross-platform C++ GUI toolkit
+libfltk_images-1.3.9-r0 - A cross-platform C++ GUI toolkit
+libfm-1.3.2-r5 - Library for file management
+libfm-extra-1.3.2-r1 - Library for file management
+libfontenc-1.1.8-r0 - X11 font encoding library
+libformw-6.4_p20240420-r2 - Console display library (libformw)
+libfreeaptx-0.1.1-r1 - Free implementation of Audio Processing Technology codec (aptX)
+libgcc-13.2.1_git20240309-r1 - GNU C compiler runtime libraries
+libgcrypt-1.10.3-r0 - General purpose crypto library based on the code used in GnuPG
+libgnome-desktop-3-44.0-r2 - GNOME desktop core libraries
+libgomp-13.2.1_git20240309-r1 - GCC shared-memory parallel programming API library
+libgpg-error-1.49-r0 - Support library for libgcrypt
+libgsf-1.14.52-r0 - Utility library for reading and writing structured file formats
+libgtop-2.41.3-r0 - GNOME top library
+libgudev-238-r0 - GObject-based wrapper library for libudev
+libgxps-0.3.2-r3 - XPS documents library & conversion utilities
+libhandy1-1.8.3-r0 - Library full of GTK+ widgets for mobile phones
+libhwy-1.0.7-r0 - Performance-portable, length-agnostic SIMD with runtime dispatch
+libice-1.1.1-r6 - X11 Inter-Client Exchange library
+libid3tag-0.16.2-r2 - MAD ID3 tagger for MP3 audio files
+libidn2-2.3.7-r0 - Encode/Decode library for internationalized domain names
+libinput-libs-1.25.0-r0 - Library for handling input devices (libraries)
+libintl-0.22.5-r0 - GNU gettext runtime library
+libjpeg-turbo-3.0.3-r0 - Accelerated baseline JPEG compression and decompression library
+libjpeg-turbo-dev-3.0.3-r0 - Accelerated baseline JPEG compression and decompression library (development files)
+libjxl-0.10.2-r0 - JPEG XL image format reference implementation
+libldac-2.0.2.3-r1 - Lossy audio codec for Bluetooth connections
+libltdl-2.4.7-r3 - Runtime libraries for GNU Libtool Dynamic Module Loader
+libmagic-5.45-r1 - File type identification library
+libmanette-0.2.7-r0 - Simple GObject game controller library
+libmd-1.1.0-r0 - Message Digest functions from BSD systems
+libmenuw-6.4_p20240420-r2 - Console display library (libmenuw)
+libmodplug-0.8.9.0-r3 - A MOD playing library
+libmount-2.40.1-r1 - Block device identification library from util-linux
+libncurses++-6.4_p20240420-r2 - Console display library (libncurses++)
+libncursesw-6.4_p20240420-r2 - Console display library (libncursesw)
+libnice-0.1.22-r0 - GLib ICE implementation
+libnotify-0.8.3-r1 - Desktop notification library
+libogg-1.3.5-r5 - Ogg bitstream and framing library
+libopenmpt-0.7.7-r0 - Cross-platform library to render tracker music to a PCM audio stream
+libpanelw-6.4_p20240420-r2 - Console display library (libpanelw)
+libpciaccess-0.18.1-r0 - X11 PCI access library
+libpciaccess-dev-0.18.1-r0 - X11 PCI access library (development files)
+libpcre2-16-10.43-r0 - PCRE2 with 16 bit character support
+libpcre2-32-10.43-r0 - PCRE2 with 32 bit character support
+libplacebo-6.338.2-r1 - Reusable library for GPU-accelerated video/image rendering
+libpng-1.6.57-r0 - Portable Network Graphics library
+libpng-dev-1.6.57-r0 - Portable Network Graphics library (development files)
+libproxy-0.5.6-r0 - Library handling all the details of proxy configuration
+libpsl-0.21.5-r1 - C library for the Publix Suffix List
+libpulse-17.0-r0 - Pulseaudio libraries
+libraw1394-2.1.2-r5 - Library to provide access to Linux 1394 subsystem
+libretro-core-info-1.17.0-r0 - Libretro core info files
+libretro-database-1.17.0-r0 - Libretro core info files
+libretro-fceumm-0_git20230107-r0 - FCEUmm libretro port
+libretro-quicknes-0_git20220725-r0 - QuickNES core library
+librist-0.2.10-r1 - Reliable Internet Stream Transport (RIST)
+librsvg-2.58.5-r0 - SAX-based renderer for SVG files into a GdkPixbuf
+librtmp-2.4_git20190330-r4 - Real Time Messaging Protocol (RTMP) library
+libsamplerate-0.2.2-r3 - Secret Rabbit Code - aka Sample Rate Converter for audio
+libseccomp-2.5.5-r1 - interface to the Linux Kernel's syscall filtering mechanism
+libsecret-0.21.4-r0 - Library for storing and retrieving passwords and other secrets
+libsharpyuv-1.3.2-r0 - Libraries for working with WebP images (libsharpyuv library)
+libsm-1.2.4-r4 - X11 Session Management library
+libsmartcols-2.40.1-r1 - Formatting library for ls-like programs
+libsndfile-1.2.2-r1 - C library for reading and writing files containing sampled sound
+libsodium-1.0.19-r1 - P(ortable|ackageable) NaCl-based crypto library
+libsoup3-3.4.4-r0 - Gnome HTTP client/server Library
+libsrt-1.5.3-r0 - Secure Reliable Transport (SRT)
+libsrtp-2.5.0-r1 - implementation of the Secure Real-time Transport Protocol (SRTP)
+libssh-0.10.6-r0 - Library for accessing ssh client services through C libraries
+libssh2-1.11.0-r3 - library for accessing ssh1/ssh2 protocol servers
+libssl3-3.3.7-r0 - SSL shared libraries
+libstdc++-13.2.1_git20240309-r1 - GNU C++ standard runtime library
+libstdc++-dev-13.2.1_git20240309-r1 - GNU C++ standard runtime library (development files)
+libtasn1-4.21.0-r0 - The ASN.1 library used in GNUTLS
+libtheora-1.1.1-r18 - An open video codec developed by the Xiph.org
+libturbojpeg-3.0.3-r0 - Accelerated baseline JPEG compression and decompression library
+libunibreak-6.1-r0 - Implementation of the line breaking and word breaking algorithms
+libunistring-1.2-r0 - Library for manipulating Unicode strings and C strings
+libunwind-1.8.1-r0 - Portable and efficient C programming interface (API) to determine the call-chain of a program
+libusb-1.0.27-r0 - Library that enables userspace access to USB devices
+libuuid-2.40.1-r1 - DCE compatible Universally Unique Identifier library
+libuv-1.48.0-r0 - Cross-platform asychronous I/O
+libva-2.21.0-r0 - Video Acceleration (VA) API for Linux
+libvdpau-1.5-r3 - Hardware-accelerated video playback library
+libvncserver-0.9.14-r0 - Library to make writing a vnc server easy
+libvorbis-1.3.7-r2 - Vorbis codec library
+libvpx-1.14.1-r0 - Library for the vp8/vp9 codecs
+libwebp-1.3.2-r0 - Libraries for working with WebP images
+libwebpdemux-1.3.2-r0 - Libraries for working with WebP images (libwebpdemux library)
+libwebpmux-1.3.2-r0 - Libraries for working with WebP images (libwebpmux library)
+libwoff2common-1.0.2-r4 - Web Open Font Format 2 reference implementation (common library)
+libwoff2enc-1.0.2-r4 - Web Open Font Format 2 reference implementation (decoder library)
+libx11-1.8.9-r1 - X11 client-side library
+libx11-dev-1.8.9-r1 - X11 client-side library (development files)
+libxau-1.0.11-r4 - X11 authorisation library
+libxau-dev-1.0.11-r4 - X11 authorisation library (development files)
+libxaw-1.0.16-r1 - X Athena Widget Set
+libxcb-1.16.1-r0 - X11 client-side library
+libxcb-dev-1.16.1-r0 - X11 client-side library (development files)
+libxcomposite-0.4.6-r5 - X11 Composite extension library
+libxcursor-1.2.2-r1 - X cursor management library
+libxdamage-1.1.6-r5 - X11 damaged region extension library
+libxdamage-dev-1.1.6-r5 - X11 damaged region extension library (development files)
+libxdmcp-1.1.5-r1 - X11 Display Manager Control Protocol library
+libxdmcp-dev-1.1.5-r1 - X11 Display Manager Control Protocol library (development files)
+libxext-1.3.6-r2 - X11 miscellaneous extensions library
+libxext-dev-1.3.6-r2 - X11 miscellaneous extensions library (development files)
+libxfce4ui-4.18.6-r0 - Widgets library for the Xfce desktop environment
+libxfce4util-4.18.2-r0 - Basic utility non-GUI functions for Xfce
+libxfixes-6.0.1-r4 - X11 miscellaneous 'fixes' extension library
+libxfixes-dev-6.0.1-r4 - X11 miscellaneous 'fixes' extension library (development files)
+libxft-2.3.8-r3 - FreeType-based font drawing library for X
+libxft-dev-2.3.8-r3 - FreeType-based font drawing library for X (development files)
+libxi-1.8.1-r4 - X11 Input extension library
+libxinerama-1.1.5-r4 - X11 Xinerama extension library
+libxinerama-dev-1.1.5-r4 - X11 Xinerama extension library (development files)
+libxkbcommon-1.7.0-r0 - keyboard handling library
+libxkbcommon-x11-1.7.0-r0 - keyboard handling library (x11 support)
+libxkbfile-1.1.3-r0 - X11 keyboard file manipulation library
+libxml2-2.12.10-r0 - XML parsing library, version 2
+libxml2-utils-2.12.10-r0 - XML utilities
+libxmu-1.1.4-r2 - X11 miscellaneous micro-utility library
+libxpm-3.5.19-r0 - X11 pixmap library
+libxpresent-1.0.1-r3 - A Xlib-compatible API for the Present extension
+libxrandr-1.5.4-r1 - X11 RandR extension library
+libxrender-0.9.11-r5 - X Rendering Extension client library
+libxrender-dev-0.9.11-r5 - X Rendering Extension client library (development files)
+libxscrnsaver-1.2.4-r3 - X.Org screen saver extension
+libxshmfence-1.3.2-r6 - X11 shared memory fences
+libxshmfence-dev-1.3.2-r6 - X11 shared memory fences (development files)
+libxslt-1.1.39-r2 - XML stylesheet transformation library
+libxt-1.3.0-r5 - X11 toolkit intrinsics library
+libxtst-1.2.4-r6 - X11 Testing -- Resource extension library
+libxv-1.0.12-r5 - X11 Video extension library
+libxxf86vm-1.1.5-r6 - X11 XFree86 video mode extension library
+libxxf86vm-dev-1.1.5-r6 - X11 XFree86 video mode extension library (development files)
+libzbar-0.23.93-r1 - Port of ZBAR BAR CODE READER (library)
+libzmq-4.3.5-r2 - The ZeroMQ messaging library and tools (libraries)
+lilv-libs-0.24.24-r1 - C library for simpler use of LV2 plugins (libraries)
+linux-headers-6.6-r0 - Linux system headers
+linux-pam-1.6.0-r0 - Linux PAM (Pluggable Authentication Modules for Linux)
+llvm17-libs-17.0.6-r2 - LLVM 17 runtime library
+logger-2.40.1-r1 - Logger from util-linux
+losetup-2.40.1-r1 - Loop disk setup from util-linux
+lsblk-2.40.1-r1 - Block device list tool from util-linux
+luajit-2.1_p20240314-r0 - OpenResty's branch of LuaJIT
+lxterminal-0.4.0-r1 - Desktop-independent VTE-based terminal emulator
+lxterminal-lang-0.4.0-r1 - Languages for package lxterminal
+lz4-libs-1.9.4-r5 - LZ4 is lossless compression algorithm with fast decoder @ multiple GB/s per core. (libraries)
+lzo-2.10-r5 - LZO -- a real-time data compression library
+make-4.4.1-r2 - GNU make utility to maintain groups of programs
+mbedtls-3.6.6-r0 - Light-weight cryptographic and SSL/TLS library
+mbedtls2-2.28.8-r1 - Light-weight cryptographic and SSL/TLS library
+mc-4.8.31-r0 - Filemanager/shell that emulates Norton Commander
+mcookie-2.40.1-r1 - Generate random numbers for xauth from util-linux
+mednafen-1.29.0-r1 - A command-line multi-system emulator
+menu-cache-1.1.0-r1 - Caching mechanism for freedesktop.org compliant menus
+mesa-24.0.9-r1 - Mesa DRI OpenGL library
+mesa-dev-24.0.9-r1 - Mesa DRI OpenGL library (development files)
+mesa-dri-gallium-24.0.9-r1 - Mesa gallium DRI drivers
+mesa-egl-24.0.9-r1 - Mesa libEGL runtime libraries
+mesa-gbm-24.0.9-r1 - Mesa gbm library
+mesa-gl-24.0.9-r1 - Mesa libGL runtime libraries
+mesa-glapi-24.0.9-r1 - Mesa shared glapi
+mesa-gles-24.0.9-r1 - Mesa libGLESv2 runtime libraries
+mesa-osmesa-24.0.9-r1 - Mesa offscreen rendering libraries
+mesa-xatracker-24.0.9-r1 - Mesa XA state tracker for vmware
+mkfontscale-1.2.2-r6 - Scalable font index generator for X
+mount-2.40.1-r1 - mount tool from util-linux
+mpc1-1.3.1-r1 - Multiprecision C library
+mpdecimal-4.0.0-r0 - complete implementation of the General Decimal Arithmetic Specification
+mpfr4-4.2.1-r0 - multiple-precision floating-point library
+mpg123-libs-1.32.8-r0 - Console-based MPEG Audio Player for Layers 1, 2 and 3 (libraries)
+mpv-0.38.0-r0 - Video player based on MPlayer/mplayer2
+mtdev-1.1.6-r3 - Multitouch Protocol Translation Library Development Package
+musl-1.2.5-r3 - the musl c library (libc) implementation
+musl-dev-1.2.5-r3 - the musl c library (libc) implementation (development files)
+musl-locales-0.1.0-r1 - Locales support for musl
+musl-locales-lang-0.1.0-r1 - Languages for package musl-locales
+musl-utils-1.2.5-r3 - the musl c library (libc) implementation
+nano-8.0-r0 - Enhanced clone of the Pico text editor
+ncurses-dev-6.4_p20240420-r2 - Console display library (development files)
+ncurses-terminfo-base-6.4_p20240420-r2 - Descriptions of common terminals
+neon-0.33.0-r0 - HTTP and WebDAV client library with a C interface
+nettle-3.10.2-r0 - Low-level cryptographic library
+nghttp2-libs-1.62.1-r0 - HTTP/2 C client, server and proxy (libraries)
+nspr-4.35-r4 - Netscape Portable Runtime
+nss-3.105-r0 - Mozilla Network Security Services
+numactl-2.0.18-r0 - Simple NUMA policy support
+openal-soft-libs-1.23.1-r0 - software implementation of OpenAL API (libraries)
+openexr-libiex-3.1.13-r1 - High dynamic-range image file format library
+openexr-libilmthread-3.1.13-r1 - High dynamic-range image file format library
+openexr-libopenexr-3.1.13-r1 - High dynamic-range image file format library
+openh264-2.4.1-r0 - OpenH264 is a codec library which supports H.264 encoding and decoding
+openjpeg-2.5.2-r0 - Open-source implementation of JPEG2000 image codec
+openssh-keygen-9.7_p1-r5 - ssh helper program for generating keys
+openssh-server-9.7_p1-r5 - OpenSSH server
+openssh-server-common-9.7_p1-r5 - OpenSSH server configuration files
+opus-1.5.2-r0 - Codec designed for interactive speech and audio transmission over the Internet
+orc-0.4.40-r0 - Oil Run-time Compiler
+p11-kit-0.25.3-r0 - Library for loading and sharing PKCS#11 modules
+pango-1.52.2-r0 - library for layout and rendering of text
+partx-2.40.1-r1 - Tell the kernel about disk partition changes from util-linux
+patch-2.7.6-r10 - Utility to apply diffs to files
+pcmanfm-1.3.2-r1 - Extremely fast and lightweight file manager
+pcmanfm-lang-1.3.2-r1 - Languages for package pcmanfm
+pcre2-10.43-r0 - Perl-compatible regular expression library
+pcre2-dev-10.43-r0 - Perl-compatible regular expression library (development files)
+pipewire-libs-1.0.6-r1 - Multimedia processing graphs (libraries)
+pixman-0.43.2-r0 - Low-level pixel manipulation library
+pixman-dev-0.43.2-r0 - Low-level pixel manipulation library (development files)
+pkgconf-2.2.0-r0 - development framework configuration tools
+poppler-24.02.0-r2 - PDF rendering library based on xpdf 3.0
+poppler-glib-24.02.0-r2 - Glib wrapper for poppler
+pulseaudio-utils-17.0-r0 - Pulseaudio utilities
+py3-brotli-1.1.0-r2 - Generic lossless compressor (python bindings)
+py3-brotli-pyc-1.1.0-r2 - Precompiled Python bytecode for py3-brotli
+py3-cffi-1.16.0-r1 - Foreign function interface for calling C code from Python3
+py3-cffi-pyc-1.16.0-r1 - Precompiled Python bytecode for py3-cffi
+py3-cparser-2.22-r1 - C parser written in Python3
+py3-cparser-pyc-2.22-r1 - Precompiled Python bytecode for py3-cparser
+py3-cryptography-42.0.7-r0 - Cryptographic recipes and primitives for Python
+py3-cryptography-pyc-42.0.7-r0 - Precompiled Python bytecode for py3-cryptography
+py3-jeepney-0.8.0-r4 - Low-level, pure Python DBus protocol wrapper
+py3-jeepney-pyc-0.8.0-r4 - Precompiled Python bytecode for py3-jeepney
+py3-mutagen-1.47.0-r1 - Python3 library for mutagen
+py3-mutagen-pyc-1.47.0-r1 - Precompiled Python bytecode for py3-mutagen
+py3-packaging-24.0-r1 - Core utilities for Python3 packages
+py3-packaging-pyc-24.0-r1 - Precompiled Python bytecode for py3-packaging
+py3-parsing-3.1.2-r1 - Object-oriented approach to text processing
+py3-parsing-pyc-3.1.2-r1 - Precompiled Python bytecode for py3-parsing
+py3-pip-24.0-r2 - Tool for installing and managing Python packages
+py3-pip-pyc-24.0-r2 - Precompiled Python bytecode for py3-pip
+py3-pycryptodomex-3.20.0-r1 - Self-contained cryptographic library
+py3-secretstorage-3.3.3-r3 - Python bindings to Freedesktop.org Secret Service API
+py3-secretstorage-pyc-3.3.3-r3 - Precompiled Python bytecode for py3-secretstorage
+py3-setuptools-70.3.0-r0 - Collection of enhancements to the Python3 distutils
+py3-setuptools-pyc-70.3.0-r0 - Precompiled Python bytecode for py3-setuptools
+py3-websockets-12.0-r2 - An implementation of the WebSocket Protocol (RFC 6455)
+py3-websockets-pyc-12.0-r2 - Precompiled Python bytecode for py3-websockets
+pyc-3.12.13-r0 - Meta package for pulling in all -pyc packages
+python3-3.12.13-r0 - High-level scripting language
+python3-pyc-3.12.13-r0 - High-level scripting language (install .pyc cache files)
+python3-pycache-pyc0-3.12.13-r0 - High-level scripting language (.pyc pycache files)
+qt5-qtbase-5.15.10_git20230714-r2 - Qt5 - QtBase components
+qt5-qtbase-x11-5.15.10_git20230714-r2 - Qt5 GUI-related libraries
+qt5-qtdeclarative-5.15.10_git20230629-r0 - Qt5 - QtDeclarative component
+qt5-qtwayland-5.15.10_git20230714-r0 - Provides APIs for Wayland
+rav1e-libs-0.7.1-r0 - The fastest and safest AV1 encoder (libraries)
+readline-8.2.10-r0 - GNU readline library
+retroarch-1.17.0-r1 - Reference frontend for the libretro API
+retroarch-assets-0_git20240102-r0 - Assets needed for RetroArch - e.g. menu drivers, etc
+retroarch-joypad-autoconfig-0_git20240123-r0 - RetroArch joypad autoconfig files
+roc-toolkit-libs-0.3.0-r0 - Real-time audio streaming over the network (libraries)
+rubberband-libs-3.3.0-r1 - library for audio time-stretching and pitch-shifting (libraries)
+runuser-2.40.1-r1 - Run a program with substitute user and group ID
+sbc-2.0-r2 - Bluetooth Subband Codec (SBC) library
+scanelf-1.3.7-r2 - Scan ELF binaries for stuff
+sdl2-2.28.5-r1 - development library designed to provide low level access to audio, keyboard, mouse, joystick and graphics
+sdl2_gfx-1.0.4-r1 - SDL2 graphics drawing primitives and other support functions
+sdl2_image-2.8.2-r0 - A simple library to load images of various formats as SDL surfaces
+sdl2_mixer-2.6.3-r1 - A simple multi-channel audio mixer
+sdl2_ttf-2.20.2-r0 - A library which allows you to use TrueType fonts in your SDL applications
+serd-libs-0.32.2-r0 - lightweight C library for RDF syntax (libraries)
+setarch-2.40.1-r1 - setarch tool from util-linux
+setpriv-2.40.1-r1 - Run a program with different Linux privilege settings
+setxkbmap-1.3.4-r0 - set the keyboard using the X Keyboard Extension
+sfdisk-2.40.1-r1 - Partition table manipulator from util-linux
+shaderc-2024.0-r0 - Collection of tools, libraries, and tests for Vulkan shader compilation
+shared-mime-info-2.4-r0 - Freedesktop.org Shared MIME Info
+skalibs-2.14.1.1-r0 - Set of general-purpose C programming libraries for skarnet.org software.
+slang-2.3.3-r3 - Powerful interpreted language
+sndio-libs-1.9.0-r0 - Small audio and MIDI framework part of the OpenBSD project (libraries)
+sord-libs-0.16.16-r0 - C library for storing RDF data in memory (libraries)
+soundtouch-2.3.3-r0 - Audio Processing library for changing Tempo, Pitch and Playback Rates
+soxr-0.1.3-r7 - High quality, one-dimensional sample-rate conversion library
+spandsp-0.0.6-r5 - SpanDSP is a library of DSP functions for telephony
+speexdsp-1.2.1-r2 - A voice compression format (DSP)
+spirv-tools-1.3.261.1-r0 - API and commands for processing SPIR-V modules
+sqlite-3.45.3-r3 - C library that implements an SQL database engine
+sqlite-dev-3.45.3-r3 - C library that implements an SQL database engine (development files)
+sqlite-libs-3.45.3-r3 - C library that implements an SQL database engine (libraries)
+squashfs-tools-4.6.1-r1 - Tools for squashfs, a highly compressed read-only filesystem for Linux
+sratom-0.6.16-r0 - library for serialising LV2 atoms to and from RDF
+ssl_client-1.36.1-r31 - EXternal ssl_client for busybox wget
+startup-notification-0.12-r7 - Monitor and display application startup
+tdb-libs-1.4.9-r1 - The tdb library (libraries)
+tiff-4.6.0t-r0 - Provides support for the Tag Image File Format or TIFF
+tree-2.1.1-r0 - Recursive directory indented listing of files
+tslib-1.23-r0 - Touchscreen Access Library
+tzdata-2026b-r0 - Timezone data
+uchardet-libs-0.0.8-r2 - Encoding detector library ported from Mozilla (libraries)
+umount-2.40.1-r1 - umount tool from util-linux
+unzip-6.0-r14 - Extract PKZIP-compatible .zip files
+util-linux-2.40.1-r1 - Random collection of Linux utilities
+util-linux-dev-2.40.1-r1 - Random collection of Linux utilities (development files)
+util-linux-misc-2.40.1-r1 - Misc binaries for util-linux
+util-macros-1.20.0-r0 - X.Org Autotools macros
+utmps-libs-0.1.2.2-r1 - A secure utmp/wtmp implementation (libraries)
+uuidgen-2.40.1-r1 - UUID generator from util-linux
+v4l-utils-1.24.1-r1 - Userspace tools and conversion library for Video 4 Linux
+v4l-utils-libs-1.24.1-r1 - Collection of video4linux support libraries
+vidstab-1.1.1-r0 - Video stabilization library
+vo-aacenc-0.1.3-r3 - VisualOn AAC encoder from Android
+vo-amrwbenc-0.1.3-r3 - VisualOn AMR-WB encoder from Android
+vte3-0.76.1-r0 - Virtual Terminal Emulator library
+vulkan-loader-1.3.261.1-r0 - Vulkan Installable Client Driver (ICD) Loader
+wayland-libs-client-1.22.0-r4 - A computer display server protocol (client library)
+wayland-libs-cursor-1.22.0-r4 - A computer display server protocol (cursor library)
+wayland-libs-egl-1.22.0-r4 - A computer display server protocol (egl library)
+wayland-libs-server-1.22.0-r4 - A computer display server protocol (server library)
+webkit2gtk-4.1-2.44.1-r1 - Portable web rendering engine WebKit for GTK+ - GTK+3 libsoup3 version
+webrtc-audio-processing-1-1.3-r0 - AudioProcessing module from the WebRTC project
+wget-1.24.5-r0 - Network utility to retrieve files from the Web
+wipefs-2.40.1-r1 - Utility to wipe filesystems from device from util-linux
+wv-1.2.9-r7 - A library that can load and parse Word 2000, 97, 95 and 6 file formats
+x11vnc-0.9.16-r5 - VNC server for real X displays
+x264-libs-0.164_git20231001-r0 - Free library for encoding H264/AVC video streams (libraries)
+x265-libs-3.6-r0 - Open Source H265/HEVC video encoder (libraries)
+xcb-proto-1.16.0-r1 - XML-XCB protocol descriptions
+xcb-proto-pyc-1.16.0-r1 - Precompiled Python bytecode for xcb-proto
+xcb-util-0.4.1-r3 - Utility libraries for X C-language Binding
+xcb-util-dev-0.4.1-r3 - Utility libraries for X C-language Binding (development files)
+xcb-util-image-0.4.1-r0 - X C-language Binding - port of Xlib XImage and XShmImage
+xcb-util-keysyms-0.4.1-r0 - X C-language Binding - X constants and keycodes
+xcb-util-renderutil-0.3.10-r0 - X C-language Binding - Convenience functions for XRender extension
+xcb-util-wm-0.4.2-r0 - X C-language Binding - helpers for ICCCM and EWMH
+xdg-dbus-proxy-0.1.5-r0 - Filtering proxy for D-Bus connections
+xdg-utils-1.2.1-r0 - Basic desktop integration functions
+xfce4-taskmanager-1.5.6-r0 - A simple taskmanager for the Xfce Desktop Environment
+xfconf-4.18.3-r0 - Hierarchical configuration system for Xfce
+xkeyboard-config-2.41-r0 - X keyboard configuration files
+xorgproto-2024.1-r0 - Combined X.Org X11 protocol headers
+xprop-1.2.7-r0 - Property displayer for X
+xset-1.2.5-r1 - X.Org xset application
+xsetroot-1.1.3-r1 - X.Org xsetroot application
+xterm-391-r0 - X Terminal Emulator
+xtrans-1.5.0-r0 - X transport library
+xvidcore-1.3.7-r2 - XviD is an open source MPEG-4 video codec
+xz-5.8.3-r0 - Library and CLI tools for XZ and LZMA compressed files
+xz-libs-5.8.3-r0 - Library and CLI tools for XZ and LZMA compressed files (libraries)
+yad-13.0-r1 - Fork of zenity - display graphical dialogs from shell scripts or command line
+yaml-0.2.5-r2 - YAML 1.1 parser and emitter written in C
+yt-dlp-2024.12.03-r0 - Command-line program to download videos from YouTube
+yt-dlp-core-2024.12.03-r0 - Command-line program to download videos from YouTube
+yt-dlp-core-pyc-2024.12.03-r0 - Precompiled Python bytecode for yt-dlp-core
+zimg-3.0.5-r2 - Scaling, colorspace conversion and dithering library
+zip-3.0-r12 - Creates PKZIP-compatible .zip files
+zix-libs-0.4.2-r0 - lightweight C99 portability and data structure library (libraries)
+zlib-1.3.2-r0 - A compression/decompression Library
+zlib-dev-1.3.2-r0 - A compression/decompression Library (development files)
+zstd-libs-1.5.6-r0 - Zstandard - Fast real-time compression algorithm (libraries)

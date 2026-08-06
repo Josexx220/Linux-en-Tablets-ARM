@@ -1,0 +1,5 @@
+
+# Abrir enlaces multimedia mediante MPV
+
+# REPRODUCCIÓN EXTERNA CON MPV
+link_action="Reproducir con MPV:/usr/local/bin/abrir-en-mpv $url &"

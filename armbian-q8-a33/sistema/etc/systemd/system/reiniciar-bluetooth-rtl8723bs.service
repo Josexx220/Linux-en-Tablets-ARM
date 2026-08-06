@@ -1,0 +1,13 @@
+[Unit]
+Description=Reinicializar Bluetooth RTL8723BS después del Wi-Fi
+Requires=iniciar-wifi-rtl8723bs.service
+After=iniciar-wifi-rtl8723bs.service bluetooth.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/reiniciar-bluetooth-rtl8723bs
+RemainAfterExit=yes
+TimeoutStartSec=30
+
+[Install]
+WantedBy=multi-user.target

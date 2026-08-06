@@ -1,0 +1,9 @@
+  UNIT                                 LOAD   ACTIVE SUB    DESCRIPTION
+● armbian-led-state.service            loaded failed failed Armbian leds state
+● console-setup.service                loaded failed failed Set console font and keymap
+● systemd-networkd-wait-online.service loaded failed failed Wait for Network to be Configured
+
+LOAD   = Reflects whether the unit definition was properly loaded.
+ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
+SUB    = The low-level unit activation state, values depend on unit type.
+3 loaded units listed.

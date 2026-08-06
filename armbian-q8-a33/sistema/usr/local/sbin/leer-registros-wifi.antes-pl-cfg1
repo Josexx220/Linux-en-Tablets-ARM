@@ -1,0 +1,51 @@
+#!/usr/bin/python3
+
+import mmap
+import os
+import struct
+
+REGISTROS = (
+    ("=== REGISTROS PL0-PL7 ===", (
+        ("PL_CFG0",   0x01F02C00),
+        ("PL_DATA",   0x01F02C10),
+        ("PL_DRIVE0", 0x01F02C14),
+        ("PL_PULL0",  0x01F02C1C),
+    )),
+    ("=== REGISTROS PG0-PG7 / SDIO ===", (
+        ("PG_CFG0",   0x01C208D8),
+        ("PG_DATA",   0x01C208E8),
+        ("PG_DRIVE0", 0x01C208EC),
+        ("PG_PULL0",  0x01C208F4),
+    )),
+)
+
+def leer32(direccion):
+    pagina = mmap.PAGESIZE
+    base = direccion & ~(pagina - 1)
+    desplazamiento = direccion - base
+
+    fd = os.open("/dev/mem", os.O_RDONLY | os.O_SYNC)
+    try:
+        memoria = mmap.mmap(
+            fd,
+            pagina,
+            flags=mmap.MAP_SHARED,
+            prot=mmap.PROT_READ,
+            offset=base,
+        )
+        try:
+            return struct.unpack_from("<I", memoria, desplazamiento)[0]
+        finally:
+            memoria.close()
+    finally:
+        os.close(fd)
+
+for titulo, registros in REGISTROS:
+    print(titulo)
+    for nombre, direccion in registros:
+        try:
+            valor = leer32(direccion)
+            print(f"{nombre:<16} 0x{direccion:08x} = 0x{valor:08x}")
+        except Exception as error:
+            print(f"{nombre:<16} 0x{direccion:08x} = ERROR: {error}")
+    print()

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Esperar a que XSDL termine de cargar
+sleep 3
+
+# Teclado latinoamericano
+/usr/bin/setxkbmap -model pc105 -layout latam -option ''
+
+# Temperatura exterior de San Juan
+pkill -f "/root/.local/bin/temperatura-panel.sh" 2>/dev/null
+sleep 1
+/root/.local/bin/temperatura-panel.sh | /usr/bin/yad --notification --listen --no-middle --icon-size=36 &
+
+exit 0

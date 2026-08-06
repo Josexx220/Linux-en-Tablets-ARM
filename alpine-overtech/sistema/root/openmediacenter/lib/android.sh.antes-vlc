@@ -1,0 +1,26 @@
+#!/bin/sh
+
+OMC_TMP_URL=/data/local/tmp/openmediacenter-url.txt
+
+android_open_url() {
+  URL="$1"
+  printf "%s\n" "$URL" > "$OMC_TMP_URL"
+  busybox xargs -r /system/bin/am start \
+    -a android.intent.action.VIEW \
+    -d < "$OMC_TMP_URL"
+}
+
+resolve_youtube_url() {
+  URL="$1"
+
+  case "$URL" in
+    http://*|https://*) ;;
+    *) return 1 ;;
+  esac
+
+  QUALITY="${VIDEO_QUALITY:-360}"
+
+  yt-dlp --no-warnings --no-playlist \
+    -f "18/best[ext=mp4][height<=${QUALITY}]/best[height<=${QUALITY}]" \
+    -g "$URL" | head -n 1
+}

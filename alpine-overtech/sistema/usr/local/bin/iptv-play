@@ -1,0 +1,4 @@
+export PATH=/system/bin:/usr/local/bin:/bin:/sbin:/usr/bin:/usr/sbin
+URL="$1"
+[ -n "$URL" ] || exit 1
+exec /system/bin/am start -a android.intent.action.VIEW -d "$URL" -t "video/*"

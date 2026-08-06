@@ -1,0 +1,29 @@
+#!/bin/sh
+set -eu
+
+DRIVER=/sys/bus/platform/drivers/sunxi-mmc
+DISPOSITIVO=1c10000.mmc
+
+# Esperar a que termine el primer intento normal del kernel.
+sleep 8
+
+# Desconectar el controlador MMC1 si quedó enlazado.
+if [ -L "$DRIVER/$DISPOSITIVO" ]; then
+    printf '%s\n' "$DISPOSITIVO" >"$DRIVER/unbind"
+    sleep 1
+fi
+
+# Secuencia comprobada: PL4 alto, ciclo de alto, ciclo de PL6 y PL8.
+/usr/local/sbin/pulso-pl8
+
+# Volver a detectar el módulo SDIO.
+printf '%s\n' "$DISPOSITIVO" >"$DRIVER/bind"
+
+# Confirmar que apareció la interfaz.
+for intento in $(seq 1 20); do
+    [ -d /sys/class/net/wlan0 ] && exit 0
+    sleep 1
+done
+
+echo "No apareció wlan0 después de reprobar MMC1" >&2
+exit 1

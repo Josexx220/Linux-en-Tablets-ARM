@@ -1,0 +1,5 @@
+menu "Multimedia" folder {
+    prog "Open Media Center" applications-multimedia lxterminal -e /usr/local/bin/omc
+}
+prog "Terminal" utilities-terminal lxterminal
+prog "Archivos" system-file-manager pcmanfm

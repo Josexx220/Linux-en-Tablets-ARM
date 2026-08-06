@@ -1,0 +1,1 @@
+Linux q8-a33 6.12.100-legacy-sunxi #2 SMP Thu Jul 30 11:04:52 UTC 2026 armv7l GNU/Linux

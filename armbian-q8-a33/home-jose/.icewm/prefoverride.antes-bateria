@@ -1,0 +1,8 @@
+# FONDO FIJO DE JOSE
+DesktopBackgroundImage="/home/jose/fondo-jose.jpeg"
+DesktopBackgroundColor="#000000"
+DesktopBackgroundCenter=0
+DesktopBackgroundScaled=1
+
+# MOSTRAR ACCESOS DIRECTOS EN EL PANEL
+TaskBarShowQuickLaunch=1

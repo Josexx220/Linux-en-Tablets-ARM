@@ -1,0 +1,63 @@
+#!/bin/sh
+
+PLAYLIST_DIR=/root/.openmediacenter/playlists
+PLAYLIST_AR="$PLAYLIST_DIR/ar.m3u"
+
+mkdir -p "$PLAYLIST_DIR"
+
+download_argentina() {
+    omc_header "IPTV"
+
+    echo "Descargando lista de Argentina..."
+    echo
+
+    wget -O "$PLAYLIST_AR" "https://iptv-org.github.io/iptv/countries/ar.m3u"
+
+    if [ -f "$PLAYLIST_AR" ]; then
+        echo
+        echo "Lista descargada correctamente."
+    else
+        echo
+        echo "Error al descargar la lista."
+    fi
+
+    omc_pause
+}
+
+iptv_menu() {
+    while true
+    do
+        omc_header "IPTV"
+
+        echo "1. Descargar lista Argentina"
+        echo "2. Abrir lista"
+        echo
+        echo "0. Volver"
+        echo
+
+        printf "Elegi una opcion: "
+        read OPCION
+
+        case "$OPCION" in
+            1)
+                download_argentina
+                ;;
+            2)
+                if [ ! -f "$PLAYLIST_AR" ]; then
+                    echo
+                    echo "Todavia no descargaste ninguna lista."
+                    omc_pause
+                else
+                    echo
+                    echo "Lista encontrada:"
+                    echo
+                    ls -l "$PLAYLIST_AR"
+                    omc_pause
+                fi
+                ;;
+            0)
+                return
+                ;;
+        esac
+    done
+}

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Terminal
+Comment=Abrir LXTerminal
+Exec=env DISPLAY=:0 HOME=/root lxterminal
+Icon=lxterminal
+Terminal=false

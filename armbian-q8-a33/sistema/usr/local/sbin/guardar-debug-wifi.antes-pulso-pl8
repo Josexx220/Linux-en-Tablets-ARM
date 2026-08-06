@@ -1,0 +1,104 @@
+#!/bin/sh
+
+sleep 8
+
+mkdir -p /sys/kernel/debug
+mountpoint -q /sys/kernel/debug ||
+    mount -t debugfs debugfs /sys/kernel/debug 2>/dev/null || true
+
+T=/sys/kernel/tracing
+[ -d "$T/events" ] || T=/sys/kernel/debug/tracing
+
+OUT=/var/log/debug-wifi-arranque.txt
+TRACE=/var/log/trace-wifi-arranque.txt
+
+{
+    echo "=== FECHA ==="
+    date
+
+    echo
+    echo "=== PREPARAR TRAZAS ==="
+
+    if [ -d "$T/events" ]; then
+        echo 0 > "$T/tracing_on"
+        echo 0 > "$T/events/enable"
+        echo 4096 > "$T/buffer_size_kb"
+        : > "$T/trace"
+
+        for EVENTO in \
+            gpio/gpio_direction \
+            gpio/gpio_value \
+            clk/clk_enable \
+            clk/clk_disable \
+            regulator/regulator_enable \
+            regulator/regulator_disable \
+            regulator/regulator_set_voltage
+        do
+            if [ -e "$T/events/$EVENTO/enable" ]; then
+                echo 1 > "$T/events/$EVENTO/enable"
+                echo "Activado: $EVENTO"
+            fi
+        done
+    else
+        echo "No se encontró tracefs"
+    fi
+
+    echo
+    echo "=== ACTIVAR DYNAMIC DEBUG MMC ==="
+    if [ -w /proc/dynamic_debug/control ]; then
+        printf '%s\n' 'file drivers/mmc/core/* +p' \
+            > /proc/dynamic_debug/control
+        printf '%s\n' 'file drivers/mmc/host/sunxi-mmc.c +p' \
+            > /proc/dynamic_debug/control
+        echo "Dynamic debug activado"
+    fi
+
+    echo
+    echo "=== REPROBAR MMC1 ==="
+
+    DRIVER=/sys/bus/platform/drivers/sunxi-mmc
+
+    [ -d "$T/events" ] && echo 1 > "$T/tracing_on"
+
+    echo
+    echo "=== REGISTROS ANTES DE UNBIND ==="
+    /usr/local/sbin/leer-registros-wifi
+
+    echo 1c10000.mmc > "$DRIVER/unbind"
+    sleep 1
+
+    echo
+    echo "=== REGISTROS DESPUÉS DE UNBIND ==="
+    /usr/local/sbin/leer-registros-wifi
+
+    echo 1c10000.mmc > "$DRIVER/bind"
+    sleep 6
+
+    echo
+    echo "=== REGISTROS DESPUÉS DE REPROBAR ==="
+    /usr/local/sbin/leer-registros-wifi
+
+    if [ -d "$T/events" ]; then
+        echo 0 > "$T/tracing_on"
+        cat "$T/trace" > "$TRACE"
+    fi
+
+    echo
+    echo "=== GPIO FINAL ==="
+    cat /sys/kernel/debug/gpio 2>&1
+
+    echo
+    echo "=== RELOJES 32K ==="
+    grep -iE '32k|osc|rtc' \
+        /sys/kernel/debug/clk/clk_summary 2>&1
+
+    echo
+    echo "=== REGULADORES ==="
+    cat /sys/kernel/debug/regulator/regulator_summary 2>&1
+
+    echo
+    echo "=== DMESG ==="
+    dmesg
+} >"$OUT" 2>&1
+
+sync

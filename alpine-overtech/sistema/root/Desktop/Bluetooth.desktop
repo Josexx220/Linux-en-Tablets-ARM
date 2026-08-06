@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Bluetooth
+Comment=Abrir ajustes Bluetooth
+Exec=/android-system/bin/sh /data/local/linux/open-bluetooth.sh
+Icon=bluetooth
+Terminal=false

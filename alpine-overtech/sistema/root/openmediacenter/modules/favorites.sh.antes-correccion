@@ -1,0 +1,108 @@
+#!/bin/sh
+
+OMC_DATA_DIR=/root/.openmediacente
+OMC_FAVORITES_FILE="$OMC_DATA_DIR/favorites.omc"
+OMC_TMP_FAVORITES=/tmp/omc-favorites-numbered.txt
+
+mkdir -p "$OMC_DATA_DIR"
+touch "$OMC_FAVORITES_FILE"
+
+add_favorite() {
+  TITLE="$1"
+  URL="$2"
+
+  if grep -F "|$URL" "$OMC_FAVORITES_FILE" >/dev/null 2>&1; then
+    echo "Ese video ya está en Favoritos."
+    return
+  fi
+
+  [ -z "$TITLE" ] && TITLE="$URL"
+  printf "%s|%s|%s\n" "$(date '+%Y-%m-%d %H:%M:%S')" "$TITLE" "$URL" >> "$OMC_FAVORITES_FILE"
+  echo "Agregado a Favoritos."
+}
+
+favorite_item_menu() {
+  INDEX="$1"
+  LINE="$(sed -n "${INDEX}p" "$OMC_TMP_FAVORITES")"
+  DATE_TIME="$(printf "%s\n" "$LINE" | cut -d '|' -f1)"
+  TITLE="$(printf "%s\n" "$LINE" | cut -d '|' -f2)"
+  URL="$(printf "%s\n" "$LINE" | cut -d '|' -f3-)"
+
+  while :; do
+    omc_header "Favorito"
+    echo "$DATE_TIME"
+    echo "$TITLE"
+    echo
+    echo "1. Reproducir"
+    echo "2. Quitar de Favoritos"
+    echo "0. Volver"
+    echo
+    printf "Elegí una opción: "
+    read ACTION
+
+    case "$ACTION" in
+      1) play_youtube_url "$URL" "$TITLE"; omc_pause ;;
+      2)
+        awk -v n="$INDEX" 'NR != n' "$OMC_TMP_FAVORITES" > "$OMC_TMP_FAVORITES.new"
+        mv "$OMC_TMP_FAVORITES.new" "$OMC_TMP_FAVORITES"
+        cp "$OMC_TMP_FAVORITES" "$OMC_FAVORITES_FILE"
+        echo "Favorito eliminado."
+        sleep 1
+        return
+        ;;
+      0) return ;;
+      *) echo "Opción inválida."; sleep 1 ;;
+    esac
+  done
+}
+
+favorites_menu() {
+  while :; do
+    omc_header "Favoritos"
+
+    if [ ! -s "$OMC_FAVORITES_FILE" ]; then
+      echo "Todavía no hay favoritos."
+      echo
+      echo "0. Volver"
+      printf "Elegí una opción: "
+      read OPTION
+      [ "$OPTION" = "0" ] && return
+      continue
+    fi
+
+    cp "$OMC_FAVORITES_FILE" "$OMC_TMP_FAVORITES"
+
+    awk -F '|' '{
+      split($1, d, " ");
+      printf "%d. %s  %s\n", NR, d[1], $2
+    }' "$OMC_TMP_FAVORITES"
+
+    echo
+    echo "L. Limpiar favoritos"
+    echo "0. Volver"
+    echo
+    printf "Elegí un número: "
+    read OPTION
+
+    case "$OPTION" in
+      0) return ;;
+      l|L)
+        printf "¿Vaciar todos los favoritos? (s/N): "
+        read CONFIRM
+        case "$CONFIRM" in
+          s|S) : > "$OMC_FAVORITES_FILE"; echo "Favoritos vaciados."; sleep 1 ;;
+        esac
+        ;;
+      ''|*[!0-9]*) echo "Opción inválida."; sleep 1 ;;
+      *)
+        MAX="$(wc -l < "$OMC_TMP_FAVORITES")"
+        if [ "$OPTION" -ge 1 ] 2>/dev/null && [ "$OPTION" -le "$MAX" ] 2>/dev/null; then
+          favorite_item_menu "$OPTION"
+        else
+          echo "No existe ese elemento."
+          sleep 1
+        fi
+        ;;
+    esac
+  done
+}

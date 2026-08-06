@@ -1,0 +1,34 @@
+#!/bin/sh
+export PATH=/system/bin:/usr/local/bin:/bin:/sbin:/usr/bin:/usr/sbin
+
+if [ -z "$1" ]; then
+    echo "Uso: yt360 URL"
+    exit 1
+fi
+
+URL="$1"
+
+case "$URL" in
+    https://inv.nadeko.net/*|http://inv.nadeko.net/*)
+        URL=$(echo "$URL" | sed 's|://inv\.nadeko\.net/|://youtube.com/|')
+        ;;
+    https://s60tube.io.vn/video/*|http://s60tube.io.vn/video/*)
+        URL=$(echo "$URL" | sed 's|https\?://s60tube\.io\.vn/video/|https://www.youtube.com/watch?v=|')
+        ;;
+esac
+
+FORMAT="best[height<=360][ext=mp4][acodec!=none][vcodec!=none]"
+
+echo "Obteniendo video en 360p..."
+
+VIDEO_URL=$(yt-dlp -f "$FORMAT" -g "$URL" | busybox head -n 1)
+
+if [ -z "$VIDEO_URL" ]; then
+    echo "No se pudo obtener el enlace del video."
+    exit 1
+fi
+
+/system/bin/am start \
+    -a android.intent.action.VIEW \
+    -d "$VIDEO_URL" \
+    -t "video/mp4"

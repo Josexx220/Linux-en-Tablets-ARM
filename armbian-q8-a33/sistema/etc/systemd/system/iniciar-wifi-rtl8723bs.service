@@ -1,0 +1,13 @@
+[Unit]
+Description=Inicializar Wi-Fi RTL8723BS mediante secuencia PL6/PL8
+After=local-fs.target systemd-modules-load.service
+Before=wpa_supplicant@wlan0.service networking.service network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/iniciar-wifi-rtl8723bs
+RemainAfterExit=yes
+TimeoutStartSec=40
+
+[Install]
+WantedBy=multi-user.target

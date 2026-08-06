@@ -1,0 +1,8 @@
+# Configuración liviana para la Q8 A33
+vo=x11
+hwdec=no
+framedrop=vo
+scale=bilinear
+dscale=bilinear
+deband=no
+keep-open=no

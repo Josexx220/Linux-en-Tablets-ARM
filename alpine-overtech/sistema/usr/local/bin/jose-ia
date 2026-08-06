@@ -1,0 +1,31 @@
+#!/bin/sh
+
+export HOME=/root
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin
+export TERM=xterm-256color
+export LANG=es_AR
+export LC_ALL=es_AR
+
+ARCHIVO_PERFIL=/root/.config/jose-ia/perfil.txt
+NOMBRE="$(printf 'Jos\303\251')"
+
+if [ -r "$ARCHIVO_PERFIL" ]; then
+    PERFIL="$(cat "$ARCHIVO_PERFIL")"
+else
+    PERFIL='Responde siempre en espanol de manera clara y amable.'
+fi
+
+clear
+printf '\n'
+printf '========================================\n'
+printf '              %s IA\n' "$NOMBRE"
+printf '========================================\n'
+printf ' Asistente gratuito mediante Pollinations\n'
+printf ' Perfil personal cargado correctamente\n'
+printf ' Escribi "exit" para cerrar la conversacion\n'
+printf '========================================\n\n'
+
+exec /usr/local/bin/tgpt \
+    --provider pollinations \
+    --preprompt "$PERFIL" \
+    -i

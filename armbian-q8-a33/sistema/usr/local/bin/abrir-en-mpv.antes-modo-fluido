@@ -1,0 +1,31 @@
+#!/bin/sh
+
+URL="${1:-}"
+LOG=/tmp/mpv-desde-dillo.log
+
+[ -n "$URL" ] || exit 1
+
+# Convertir enlaces de s60Tube en enlaces de YouTube
+case "$URL" in
+    http://s60tube.io.vn/video/*|https://s60tube.io.vn/video/*)
+        ID="${URL##*/}"
+        ID="${ID%%\?*}"
+        ID="${ID%%\#*}"
+        URL="https://www.youtube.com/watch?v=$ID"
+        ;;
+esac
+
+{
+    echo
+    echo "=== $(date) ==="
+    echo "URL final: $URL"
+} >> "$LOG"
+
+export DISPLAY=:0
+export XAUTHORITY=/home/jose/.Xauthority
+export HOME=/home/jose
+
+nohup mpv \
+    --force-window=yes \
+    --ytdl-format="best[height<=240]/worst" \
+    "$URL" >>"$LOG" 2>&1 &

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Dillo
+Comment=Navegador liviano con reproducción mediante MPV
+Exec=/usr/local/bin/dillo
+Icon=/usr/local/share/icons/hicolor/128x128/apps/dillo.png
+Terminal=false
+Categories=Network;WebBrowser;
+StartupNotify=false

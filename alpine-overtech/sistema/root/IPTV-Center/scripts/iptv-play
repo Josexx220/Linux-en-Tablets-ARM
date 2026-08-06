@@ -1,0 +1,8 @@
+#!/bin/sh
+url="$1"
+[ -n "$url" ] || exit 1
+exec chroot /proc/1/root /system/bin/am start \
+  -a android.intent.action.VIEW \
+  -d "$url" \
+  -t 'video/*' \
+  -n org.videolan.vlc/.gui.video.VideoPlayerActivity

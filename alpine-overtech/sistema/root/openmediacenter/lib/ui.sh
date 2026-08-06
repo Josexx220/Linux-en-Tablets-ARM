@@ -1,0 +1,55 @@
+#!/bin/sh
+
+ui_init() {
+  if [ "${USE_COLORS:-1}" = "1" ]; then
+    C_TITLE="$(printf '\033[1;36m')"
+    C_OK="$(printf '\033[1;32m')"
+    C_WARN="$(printf '\033[1;33m')"
+    C_ERROR="$(printf '\033[1;31m')"
+    C_RESET="$(printf '\033[0m')"
+  else
+    C_TITLE=""
+    C_OK=""
+    C_WARN=""
+    C_ERROR=""
+    C_RESET=""
+  fi
+}
+
+omc_banner() {
+  ui_init
+  printf "%s" "$C_TITLE"
+cat <<EOF
+ ██████╗ ███╗   ███╗ ██████╗
+██╔═══██╗████╗ ████║██╔════╝
+██║   ██║██╔████╔██║██║
+██║   ██║██║╚██╔╝██║██║
+╚██████╔╝██║ ╚═╝ ██║╚██████╗
+ ╚═════╝ ╚═╝     ╚═╝ ╚═════╝
+
+      Open Media Center
+        version $VERSION
+EOF
+  printf "%s" "$C_RESET"
+}
+
+omc_header() {
+  ui_init
+  clear
+  printf "%s=================================\n" "$C_TITLE"
+  printf " Open Media Center - %s\n" "$1"
+  printf "=================================%s\n\n" "$C_RESET"
+}
+
+omc_pause() {
+  echo
+  printf "Presioná Enter para continuar..."
+  read _
+}
+
+omc_version() {
+  echo "Open Media Center"
+  echo "Versión: $VERSION"
+  echo "Backend: Android"
+  echo "Calidad: ${VIDEO_QUALITY}p"
+}

@@ -1,0 +1,7 @@
+NAME          SIZE FSTYPE LABEL      UUID                                 MOUNTPOINTS
+mmcblk0      58,4G                                                        
+└─mmcblk0p1  57,8G ext4   armbi_root 1368f94f-baa9-4e1f-88a2-6772905fa22b /var/log.hdd
+                                                                          /
+zram0       228,9M                                                        [SWAP]
+zram1          50M                                                        /var/log
+zram2           0B                                                        

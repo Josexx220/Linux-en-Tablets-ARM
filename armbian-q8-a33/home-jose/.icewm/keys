@@ -1,0 +1,5 @@
+
+# BOTONES FÍSICOS DE VOLUMEN Q8
+key "XF86AudioLowerVolume" /usr/local/bin/q8-volumen-bajar
+key "XF86AudioRaiseVolume" /usr/local/bin/q8-volumen-subir
+key "XF86AudioMute" /usr/local/bin/q8-volumen-silenciar

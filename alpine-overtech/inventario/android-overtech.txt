@@ -1,0 +1,5 @@
+Modelo: TAB-OV721
+Dispositivo: astar-m739
+Arquitectura: armeabi-v7a
+Android: 4.4.2
+Hardware: sun8i

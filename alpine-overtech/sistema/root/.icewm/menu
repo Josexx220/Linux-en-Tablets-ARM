@@ -1,0 +1,35 @@
+menuprog "Aplicaciones" folder icewm-menu-fdo
+
+menu "Internet" folder {
+    prog "Open Media Center" applications-multimedia lxterminal -e /usr/local/bin/omc
+    prog "Dillo" dillo dillo
+}
+
+menu "Oficina" folder {
+    prog "AbiWord" abiword abiword
+    prog "Gnumeric" gnumeric gnumeric
+    prog "Evince" evince org.gnome.Evince
+}
+
+menu "Multimedia" folder {
+    prog "FLStream" /usr/local/share/pixmaps/flstream.png /usr/local/bin/flstream-launch
+    prog "MPV" mpv mpv
+    prog "Visor de imágenes" feh feh
+}
+
+menu "Sistema" folder {
+    prog "Terminal" lxterminal lxterminal
+    prog "Archivos" pcmanfm pcmanfm
+    prog "Administrador de tareas" xfce4-taskmanager xfce4-taskmanager
+    prog "Htop" htop lxterminal -e htop
+    separator
+    prog "Preferencias de archivos" preferences-desktop libfm-pref-apps
+    prog "Preferencias del escritorio" preferences-desktop pcmanfm-desktop-pref
+    prog "Acerca de XFCE" help-about xfce4-about
+}
+
+separator
+
+prog "Reiniciar IceWM" restart icewm --restart
+prog "Salir" exit icewm-session-logout
+prog "IPTV Center" /usr/share/pixmaps/iptvcenter.svg /usr/local/bin/run-iptvcenter

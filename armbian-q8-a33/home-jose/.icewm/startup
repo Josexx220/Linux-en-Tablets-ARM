@@ -1,0 +1,8 @@
+#!/bin/sh
+pgrep -x pcmanfm >/dev/null || pcmanfm --desktop &
+
+
+
+
+# ONBOARD SOLAMENTE SIN TECLADO EXTERNO
+pgrep -f "^/bin/sh /home/jose/.local/bin/onboard-segun-teclado.sh$" >/dev/null || /home/jose/.local/bin/onboard-segun-teclado.sh &

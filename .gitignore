@@ -1,0 +1,52 @@
+# Respaldos grandes: conservar localmente o publicar como Releases
+/respaldos/
+*.img
+*.img.gz
+*.tar
+*.tar.gz
+*.tcz
+
+# Informes de trabajo
+/informe-para-documentacion.txt
+
+# Secretos, identidad de equipos y datos personales
+**/.ssh/
+**/ssh_host_*
+**/authorized_keys
+**/dpid_comm_keys
+**/cookiesrc
+**/pulse/cookie
+**/system-connections/
+**/wpa_supplicant.conf
+**/recently-used.xbel
+**/history.omc
+**/favorites.omc
+
+# Cachés y temporales
+**/__pycache__/
+*.pyc
+*.log
+*.part
+
+# Binarios recuperables desde paquetes o compilables desde las fuentes
+/armbian-q8-a33/sistema/usr/local/bin/yt-dlp
+/alpine-overtech/sistema/usr/local/bin/InfoNES
+/alpine-overtech/sistema/usr/local/bin/flstream
+/alpine-overtech/sistema/usr/local/bin/iptvcenter
+/alpine-overtech/sistema/usr/local/bin/tgpt
+/alpine-overtech/sistema/root/IPTV-Center/iptvcenter
+/alpine-overtech/sistema/root/flstream-src/flstream
+
+# Binarios de Dillo y fondo personal: permanecen en el respaldo local
+/armbian-q8-a33/sistema/usr/local/bin/dillo
+/armbian-q8-a33/sistema/usr/local/bin/dpid
+/armbian-q8-a33/sistema/usr/local/bin/dpidc
+/armbian-q8-a33/sistema/home/jose/fondo-jose.jpeg
+
+# Datos privados y listas multimedia locales
+/alpine-overtech/sistema/root/.config/jose-ia/
+/alpine-overtech/sistema/root/openmediacenter/playlists/
+/alpine-overtech/sistema/root/openmediacenter-v0.5-dev/playlists/
+
+# Firmware de terceros conservado solamente en el respaldo local
+/armbian-q8-a33/sistema/usr/lib/firmware/rtl_bt/

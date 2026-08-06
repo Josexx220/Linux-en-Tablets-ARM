@@ -1,0 +1,13 @@
+[Unit]
+Description=Pantalla Silead como touchpad relativo
+After=systemd-udev-settle.service
+Wants=systemd-udev-settle.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/sbin/silead-touchpad-relativo.py
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

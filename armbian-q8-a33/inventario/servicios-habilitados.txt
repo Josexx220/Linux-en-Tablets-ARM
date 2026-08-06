@@ -1,0 +1,38 @@
+UNIT FILE                             STATE   PRESET
+armbian-hardware-monitor.service      enabled enabled
+armbian-hardware-optimize.service     enabled enabled
+armbian-led-state.service             enabled enabled
+armbian-ramlog.service                enabled enabled
+armbian-zram-config.service           enabled enabled
+blueman-mechanism.service             enabled enabled
+bluetooth.service                     enabled enabled
+console-setup.service                 enabled enabled
+cron.service                          enabled enabled
+e2scrub_reap.service                  enabled enabled
+fake-hwclock.service                  enabled enabled
+getty@.service                        enabled enabled
+iniciar-wifi-rtl8723bs.service        enabled enabled
+keyboard-setup.service                enabled enabled
+mostrar-ip.service                    enabled enabled
+reiniciar-bluetooth-rtl8723bs.service enabled enabled
+rsyslog.service                       enabled enabled
+silead-touchpad-relativo.service      enabled enabled
+ssh.service                           enabled enabled
+systemd-network-generator.service     enabled enabled
+systemd-networkd-wait-online.service  enabled disabled
+systemd-networkd.service              enabled enabled
+systemd-pstore.service                enabled enabled
+systemd-resolved.service              enabled enabled
+systemd-timesyncd.service             enabled enabled
+wpa_supplicant.service                enabled enabled
+systemd-networkd.socket               enabled enabled
+remote-fs.target                      enabled enabled
+apt-daily-upgrade.timer               enabled enabled
+apt-daily.timer                       enabled enabled
+dpkg-db-backup.timer                  enabled enabled
+e2scrub_all.timer                     enabled enabled
+fstrim.timer                          enabled enabled
+logrotate.timer                       enabled enabled
+man-db.timer                          enabled enabled
+
+35 unit files listed.

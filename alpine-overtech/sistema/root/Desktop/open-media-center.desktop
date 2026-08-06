@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Open Media Center
+Comment=Centro multimedia
+Exec=lxterminal -e /usr/local/bin/omc
+Icon=/usr/share/pixmaps/openmediacenter.png
+Terminal=false
+Categories=AudioVideo;

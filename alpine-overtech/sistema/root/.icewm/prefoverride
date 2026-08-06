@@ -1,0 +1,21 @@
+TaskBarDoubleHeight=0
+MenuIconSize=24
+SmallIconSize=24
+LargeIconSize=48
+MenuButtonTitle="Inicio"
+ShowMenuButtonIcon=1
+TitleFontNameXft="DejaVu Sans:size=34:bold"
+MenuFontNameXft="DejaVu Sans:size=34:bold"
+NormalTaskBarFontNameXft="DejaVu Sans:size=34:bold"
+ActiveTaskBarFontNameXft="DejaVu Sans:size=34:bold"
+TaskBarShowWorkspaces=0
+ClockFontNameXft="DejaVu Sans:size=34:bold"
+TitleBarHorzOffset=12
+TitleBarHeight=36
+TitleBarHeight=30
+ToolTipFontNameXft="DejaVu Sans:size=34:bold"
+ToolTipFontNameXft="DejaVu Sans:size=30:bold"
+TrayIconMaxWidth=64
+TrayIconMaxHeight=36
+ShutdownCommand="chroot /proc/1/root /system/bin/reboot -p"
+RebootCommand="chroot /proc/1/root /system/bin/reboot"

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Wi-Fi
+Comment=Abrir ajustes Wi-Fi
+Exec=/android-system/bin/sh /data/local/linux/open-wifi.sh
+Icon=network-wireless
+Terminal=false
