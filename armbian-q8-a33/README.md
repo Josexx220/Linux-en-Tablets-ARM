@@ -29,3 +29,7 @@ Sistema Linux nativo para una tablet Q8 con Allwinner A33, cuatro Cortex-A7 y un
 | `.icewm/` | Escritorio, panel, accesos e indicadores |
 
 Más detalles: [docs/HARDWARE.md](docs/HARDWARE.md), [docs/WIFI-BLUETOOTH.md](docs/WIFI-BLUETOOTH.md) y [docs/RESTAURACION.md](docs/RESTAURACION.md).
+
+## Bitácora
+
+- [Historia, pruebas, resultados y pendientes](docs/BITACORA.md)

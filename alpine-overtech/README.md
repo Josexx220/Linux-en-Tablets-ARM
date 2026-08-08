@@ -38,3 +38,7 @@ Los scripts agregan `/system/bin` al `PATH`. `iptv-play` y `yt360` llaman a `/sy
 - José IA: interfaz para `tgpt` y Pollinations; el perfil personal no debe publicarse.
 
 Consultá [docs/ARRANQUE.md](docs/ARRANQUE.md), [docs/MULTIMEDIA.md](docs/MULTIMEDIA.md) y [docs/RESTAURACION.md](docs/RESTAURACION.md).
+
+## Bitácora
+
+- [Historia, pruebas, resultados y pendientes](docs/BITACORA.md)

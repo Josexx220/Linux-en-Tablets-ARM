@@ -29,3 +29,9 @@ Los respaldos grandes se conservan fuera del historial de Git y están identific
 ## Advertencia
 
 Los ajustes de GPIO, Device Tree y firmware son específicos de estos modelos y revisiones. No deben aplicarse a otra tablet o TV Box solo porque también utilice un SoC Allwinner.
+
+## Bitácoras del trabajo
+
+- [Cronología general de ambos proyectos](docs/CRONOLOGIA-GENERAL.md)
+- [Bitácora completa de Armbian Q8-A33](armbian-q8-a33/docs/BITACORA.md)
+- [Bitácora completa de Alpine Overtech](alpine-overtech/docs/BITACORA.md)
