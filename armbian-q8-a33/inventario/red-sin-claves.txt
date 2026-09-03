@@ -1,2 +1,11 @@
-lo               UNKNOWN        127.0.0.1/8 ::1/128 
-wlan0            UP             192.168.100.228/24 metric 1024 2803:9800:9806:8030:44:6ff:fe09:83bc/64 fe80::44:6ff:fe09:83bc/64 
+# Inventario de red sanitizado
+#
+# Las direcciones reales fueron retiradas de la copia pública.
+# Para obtener el estado actual directamente en la tablet:
+#
+#   ip -br address
+#
+# Ejemplo de estructura esperada, sin datos identificadores:
+
+lo               UNKNOWN        127.0.0.1/8 ::1/128
+wlan0            UP             <IP-PRIVADA>/24 <IPv6-OCULTA>
