@@ -273,7 +273,7 @@ El criterio acordado es conservador:
 
 No se considera objetivo perseguir el menor número posible de paquetes a cualquier costo. La prioridad es una Q8 pequeña, rápida y recuperable.
 
-## 21. Tienda Q8 — en desarrollo
+## 21. Tienda Q8 — desarrollo inicial
 
 A comienzos de septiembre comenzó Tienda Q8, una tienda de software liviana pensada para esta tablet. Utiliza APT como backend y una interfaz GTK3 adaptada a 1024×600, evitando incorporar infraestructuras pesadas como GNOME Software, Flatpak o Snap.
 
@@ -287,7 +287,8 @@ La arquitectura incluye:
 
 El helper y su política de sudo fueron sometidos a pruebas de autorización y rechazo de paquetes no permitidos. Estas pruebas no instalaron ni eliminaron paquetes durante la validación.
 
-**Estado: en desarrollo.** No debe presentarse todavía como componente terminado ni como método general de administración de paquetes para otras instalaciones Armbian.
+Esta fue la etapa inicial del componente. Su validación funcional posterior se
+documenta en la sección 23.
 
 ## 22. Estado verificado — 03/09/2026
 
@@ -312,7 +313,7 @@ El 03/09/2026 se realizó un nuevo inventario directamente sobre la tablet en fu
 | zram | Activo |
 | swapfile | Activo |
 | Acceso SSH | Funcional |
-| Tienda Q8 | En desarrollo |
+| Tienda Q8 | Versión 1 funcional, validada e integrada con Q8 Shell |
 | Imagen completa de respaldo | Creada y verificada previamente |
 
 ### Overlays activos
@@ -339,6 +340,31 @@ No se deben publicar en ejemplos o inventarios destinados a GitHub:
 - estabilizar el formato completo del pipeline GC0308/CSI y probar captura repetible;
 - comprobar de forma específica el uso real de Cedrus antes de documentar aceleración de vídeo;
 - continuar Q8 Armbian Slim mediante cambios pequeños y reversibles;
-- continuar el desarrollo y pruebas de Tienda Q8;
+- ampliar el catálogo de Tienda Q8 solamente después de nuevas simulaciones y pruebas;
 - validar una restauración completa de la imagen sobre otra microSD de igual o mayor capacidad;
 - actualizar el resto de la documentación y los archivos reproducibles del repositorio para que reflejen este estado.
+
+## 23. Tienda Q8 v1 validada — 03/09/2026
+
+Tienda Q8 completó su primera prueba funcional sobre la Q8-A33. El ayudante APT
+restringido fue corregido después de detectar que una simulación segura se
+interpretaba erróneamente como una actualización de paquetes existentes.
+
+La validación final incluyó:
+
+- rechazo de paquetes fuera del catálogo;
+- protección de aplicaciones que forman parte del entorno Q8;
+- instalación real de `ace-of-penguins` sin actualizaciones ni eliminaciones
+  laterales;
+- desinstalación posterior afectando solamente al paquete de prueba;
+- actualización de índices APT sin actualización del sistema;
+- comparación del inventario de `dpkg` antes y después de la prueba;
+- integración de un acceso **Tienda Q8** en el menú lateral de Q8 Shell;
+- conservación de los accesos inferiores de Terminal y Teclado;
+- apertura correcta desde Q8 Shell y control de instancia única.
+
+El código, el ayudante, la plantilla `sudoers`, las instrucciones y las capturas
+se publican en [`armbian-q8-a33/tienda-q8/`](../tienda-q8/README.md).
+
+La versión 1 sigue siendo específica de la instalación documentada. El catálogo
+y las protecciones deben revisarse antes de adaptarla a otro sistema.

@@ -109,9 +109,9 @@ La existencia de un lanzador no implica que cada juego o aplicación tenga rendi
 
 ## Tienda Q8
 
-Existe además un proyecto de tienda de software ligera llamado **Tienda Q8**. Está diseñado alrededor de APT y una lista controlada de paquetes `armhf`, con una interfaz adecuada para 1024×600.
+Existe además una tienda de software ligera llamada [**Tienda Q8**](../tienda-q8/README.md). Está diseñada alrededor de APT y una lista controlada de paquetes `armhf`, con una interfaz adecuada para 1024×600.
 
-**Tienda Q8 está en desarrollo.** No debe presentarse todavía como una función finalizada de Q8 Shell.
+La versión 1 fue validada el 03/09/2026 mediante instalación, desinstalación y actualización de índices APT. También quedó integrada como acceso lateral de Q8 Shell.
 
 Su diseño evita GNOME Software, Flatpak y Snap para mantener bajo el consumo de recursos y utiliza un helper privilegiado restringido para las operaciones APT autorizadas.
 
@@ -126,4 +126,4 @@ Q8 Shell sigue cuatro principios:
 
 ## Estado público recomendado
 
-**Q8 Shell es una interfaz GTK3 ligera y funcional diseñada para la pantalla táctil 1024×600 de esta Q8-A33. Integra estado del sistema, lanzadores y controles cotidianos sobre una base X11/IceWM. Tienda Q8 continúa en desarrollo.**
+**Q8 Shell es una interfaz GTK3 ligera y funcional diseñada para la pantalla táctil 1024×600 de esta Q8-A33. Integra estado del sistema, lanzadores y controles cotidianos sobre una base X11/IceWM. Tienda Q8 v1 está integrada y validada.**
