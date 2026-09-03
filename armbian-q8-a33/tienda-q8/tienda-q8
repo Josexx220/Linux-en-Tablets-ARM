@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /usr/bin/python3 "$HOME/.local/share/tienda-q8/tienda-q8.py" "$@"

@@ -1,0 +1,404 @@
+#!/usr/bin/python3
+"""Ayudante APT mínimo y restringido para Tienda Q8."""
+
+import fcntl
+import logging
+import os
+import subprocess
+import sys
+import tempfile
+
+
+APT_GET = "/usr/bin/apt-get"
+APT_CACHE = "/usr/bin/apt-cache"
+DPKG = "/usr/bin/dpkg"
+DPKG_QUERY = "/usr/bin/dpkg-query"
+
+STATE_DIR = "/var/lib/tienda-q8"
+STATE_FILE = os.path.join(STATE_DIR, "installed-by-store")
+LOCK_FILE = "/run/lock/tienda-q8-apt.lock"
+LOG_FILE = "/var/log/tienda-q8-apt.log"
+
+PROTECTED = {
+    "abiword",
+    "dillo",
+    "dosbox",
+    "evince",
+    "gnumeric",
+    "mpv",
+    "netsurf-gtk",
+    "onboard",
+    "pcmanfm",
+    "scummvm",
+    "xfce4-taskmanager",
+}
+
+REMOVABLE = {
+    "ace-of-penguins",
+    "catfish",
+    "claws-mail",
+    "galculator",
+    "gnome-mines",
+    "gnome-sudoku",
+    "gpicview",
+    "lbreakout2",
+    "mednafen",
+    "mousepad",
+    "mtpaint",
+    "parole",
+    "stella",
+    "transmission-gtk",
+    "xarchiver",
+}
+
+ALLOWED = PROTECTED | REMOVABLE
+
+
+def say(message):
+    print(message, flush=True)
+
+
+def fail(message, code=2):
+    logging.error(message)
+    say(f"ERROR: {message}")
+    raise SystemExit(code)
+
+
+def command_output(command):
+    result = subprocess.run(
+        command,
+        env=safe_environment(),
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        check=False,
+    )
+    return result.returncode, result.stdout
+
+
+def safe_environment():
+    return {
+        "PATH": "/usr/sbin:/usr/bin:/sbin:/bin",
+        "LC_ALL": "C",
+        "LANG": "C",
+        "DEBIAN_FRONTEND": "noninteractive",
+    }
+
+
+def stream_command(command):
+    logging.info("Ejecutando acción permitida: %s", " ".join(command))
+    process = subprocess.Popen(
+        command,
+        env=safe_environment(),
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        bufsize=1,
+    )
+    assert process.stdout is not None
+    for line in process.stdout:
+        print(line, end="", flush=True)
+    return_code = process.wait()
+    if return_code != 0:
+        fail(f"APT terminó con código {return_code}", return_code)
+
+
+def is_installed(package):
+    result = subprocess.run(
+        [DPKG_QUERY, "-W", "-f=${db:Status-Status}", package],
+        env=safe_environment(),
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.DEVNULL,
+        check=False,
+    )
+    return result.returncode == 0 and result.stdout.strip() == "installed"
+
+
+def check_catalog_package(package):
+    if package not in ALLOWED:
+        fail(f"paquete fuera del catálogo autorizado: {package}")
+
+
+def check_candidate_architecture(package):
+    code, policy = command_output([APT_CACHE, "policy", package])
+    if code != 0:
+        fail(f"no se pudo consultar el candidato de {package}")
+
+    candidate = None
+    for line in policy.splitlines():
+        stripped = line.strip()
+        if stripped.startswith("Candidate:"):
+            candidate = stripped.split(":", 1)[1].strip()
+            break
+
+    if not candidate or candidate == "(none)":
+        fail(f"{package} no tiene una versión candidata")
+
+    code, package_data = command_output(
+        [APT_CACHE, "show", f"{package}={candidate}"]
+    )
+    if code != 0:
+        fail(f"no se pudo verificar la arquitectura de {package}")
+
+    architecture = None
+    for line in package_data.splitlines():
+        if line.startswith("Architecture:"):
+            architecture = line.split(":", 1)[1].strip()
+            break
+
+    if architecture not in {"armhf", "all"}:
+        fail(
+            f"arquitectura no permitida para {package}: "
+            f"{architecture or 'desconocida'}"
+        )
+
+    say(f"Candidato validado: {package} {candidate} ({architecture})")
+
+
+def simulate_install(package):
+    code, output = command_output(
+        [
+            APT_GET,
+            "-s",
+            "--no-install-recommends",
+            "--no-remove",
+            "install",
+            package,
+        ]
+    )
+    if code != 0:
+        say(output)
+        fail(f"la simulación de instalación de {package} falló")
+
+    removals = [line for line in output.splitlines() if line.startswith("Remv ")]
+    existing_changes = []
+    for line in output.splitlines():
+        fields = line.split()
+        if not line.startswith("Inst ") or len(fields) < 2:
+            continue
+        simulated_package = fields[1].split(":", 1)[0]
+        if is_installed(simulated_package):
+            existing_changes.append(line)
+    if removals:
+        fail("la instalación intentaría eliminar paquetes")
+    if existing_changes:
+        fail("la instalación intentaría modificar paquetes existentes")
+
+    say("Simulación segura: no elimina ni actualiza paquetes existentes")
+
+
+def package_priority(package):
+    result = subprocess.run(
+        [
+            DPKG_QUERY,
+            "-W",
+            "-f=${Essential}\t${Protected}\t${Priority}",
+            package,
+        ],
+        env=safe_environment(),
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.DEVNULL,
+        check=False,
+    )
+    if result.returncode != 0:
+        return "", "", ""
+    fields = (result.stdout.rstrip("\n").split("\t") + ["", "", ""])[:3]
+    return tuple(field.strip().lower() for field in fields)
+
+
+def read_state():
+    try:
+        with open(STATE_FILE, encoding="utf-8") as state:
+            return {
+                line.strip()
+                for line in state
+                if line.strip() in REMOVABLE
+            }
+    except FileNotFoundError:
+        return set()
+
+
+def write_state(packages):
+    os.makedirs(STATE_DIR, mode=0o755, exist_ok=True)
+    descriptor, temporary = tempfile.mkstemp(
+        prefix="installed-by-store.",
+        dir=STATE_DIR,
+        text=True,
+    )
+    try:
+        with os.fdopen(descriptor, "w", encoding="utf-8") as state:
+            for package in sorted(packages):
+                state.write(package + "\n")
+            state.flush()
+            os.fsync(state.fileno())
+        os.chmod(temporary, 0o644)
+        os.replace(temporary, STATE_FILE)
+    finally:
+        if os.path.exists(temporary):
+            os.unlink(temporary)
+
+
+def simulate_remove(package):
+    essential, protected, priority = package_priority(package)
+    if essential == "yes" or protected == "yes":
+        fail(f"{package} está marcado como esencial o protegido")
+    if priority in {"required", "important"}:
+        fail(f"{package} tiene prioridad crítica: {priority}")
+
+    code, output = command_output([APT_GET, "-s", "remove", package])
+    if code != 0:
+        say(output)
+        fail(f"la simulación de desinstalación de {package} falló")
+
+    removals = {
+        line.split()[1].split(":", 1)[0]
+        for line in output.splitlines()
+        if line.startswith("Remv ") and len(line.split()) >= 2
+    }
+    if removals != {package}:
+        fail(
+            "desinstalación bloqueada; afectaría: "
+            + (", ".join(sorted(removals)) if removals else "ningún paquete")
+        )
+
+    say(f"Simulación segura: solamente se quitará {package}")
+
+
+def acquire_lock():
+    lock = open(LOCK_FILE, "w", encoding="utf-8")
+    try:
+        fcntl.flock(lock.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except BlockingIOError:
+        fail("ya hay otra operación de Tienda Q8 en curso")
+    return lock
+
+
+def action_selftest():
+    architecture = subprocess.check_output(
+        [DPKG, "--print-architecture"],
+        env=safe_environment(),
+        text=True,
+    ).strip()
+    if architecture != "armhf":
+        fail(f"arquitectura del sistema no permitida: {architecture}")
+    say("Ayudante Tienda Q8: OK")
+    say("Arquitectura nativa: armhf")
+    say(f"Paquetes autorizados: {len(ALLOWED)}")
+    say(f"Paquetes protegidos: {len(PROTECTED)}")
+    say(f"Paquetes removibles: {len(REMOVABLE)}")
+
+
+def action_status():
+    for package in sorted(read_state()):
+        if is_installed(package):
+            say(package)
+
+
+def action_update():
+    lock = acquire_lock()
+    say("Actualizando información de paquetes…")
+    stream_command([APT_GET, "update"])
+    say("Información de paquetes actualizada correctamente")
+    return lock
+
+
+def action_install(package):
+    check_catalog_package(package)
+    lock = acquire_lock()
+    already_installed = is_installed(package)
+    check_candidate_architecture(package)
+    simulate_install(package)
+
+    if already_installed:
+        say(f"{package} ya estaba instalado; no se modificó")
+        return lock
+
+    stream_command(
+        [
+            APT_GET,
+            "-y",
+            "--no-install-recommends",
+            "--no-remove",
+            "install",
+            package,
+        ]
+    )
+    if not is_installed(package):
+        fail(f"APT terminó pero {package} no figura instalado")
+
+    state = read_state()
+    if package in REMOVABLE:
+        state.add(package)
+        write_state(state)
+    say(f"Instalación finalizada: {package}")
+    return lock
+
+
+def action_remove(package):
+    check_catalog_package(package)
+    if package in PROTECTED:
+        fail(f"{package} forma parte del entorno protegido de Q8")
+
+    state = read_state()
+    if package not in state:
+        fail(f"{package} no fue instalado por Tienda Q8")
+
+    lock = acquire_lock()
+    if not is_installed(package):
+        state.discard(package)
+        write_state(state)
+        say(f"{package} ya no estaba instalado; estado corregido")
+        return lock
+
+    simulate_remove(package)
+    stream_command([APT_GET, "-y", "remove", package])
+    if is_installed(package):
+        fail(f"APT terminó pero {package} todavía figura instalado")
+
+    state.discard(package)
+    write_state(state)
+    say(f"Desinstalación finalizada: {package}")
+    return lock
+
+
+def main():
+    if os.geteuid() != 0:
+        fail("este ayudante debe ejecutarse mediante sudo")
+
+    os.makedirs(STATE_DIR, mode=0o755, exist_ok=True)
+    logging.basicConfig(
+        filename=LOG_FILE,
+        level=logging.INFO,
+        format="%(asctime)s %(levelname)s %(message)s",
+    )
+
+    if len(sys.argv) < 2:
+        fail("falta la acción")
+
+    action = sys.argv[1]
+    package = sys.argv[2] if len(sys.argv) == 3 else None
+
+    if action in {"selftest", "status", "update"} and len(sys.argv) != 2:
+        fail(f"la acción {action} no acepta un paquete")
+    if action in {"install", "remove"} and len(sys.argv) != 3:
+        fail(f"la acción {action} requiere exactamente un paquete")
+
+    if action == "selftest":
+        action_selftest()
+    elif action == "status":
+        action_status()
+    elif action == "update":
+        action_update()
+    elif action == "install":
+        action_install(package)
+    elif action == "remove":
+        action_remove(package)
+    else:
+        fail(f"acción no permitida: {action}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

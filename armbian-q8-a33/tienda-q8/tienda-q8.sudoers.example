@@ -1,0 +1,2 @@
+# Sustituir USUARIO_Q8 por la cuenta gráfica antes de instalar este archivo.
+USUARIO_Q8 ALL=(root) NOPASSWD: /usr/local/sbin/tienda-q8-apt
