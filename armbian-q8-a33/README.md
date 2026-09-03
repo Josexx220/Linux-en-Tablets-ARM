@@ -59,7 +59,7 @@ rootdev=UUID=<UUID-DE-LA-PARTICION-ROOT>
 | `orientar-fbcon-stk8312.service` | Utiliza STK8312 para orientación de consola |
 | `mostrar-ip.service` | Herramienta de acceso/diagnóstico en tty1 |
 | Q8 Shell | Interfaz táctil ligera específica de la tablet |
-| Tienda Q8 | Tienda APT ligera **en desarrollo** |
+| [Tienda Q8](tienda-q8/README.md) | Tienda APT ligera, versión 1 funcional y validada |
 
 ## Documentación
 
@@ -70,6 +70,7 @@ rootdev=UUID=<UUID-DE-LA-PARTICION-ROOT>
 - [Cámara GC0308 y CSI](docs/CAMERA-GC0308.md)
 - [Device Tree y overlays](docs/DEVICE-TREE.md)
 - [Q8 Shell](docs/Q8-SHELL.md)
+- [Tienda Q8](tienda-q8/README.md)
 - [Restauración](docs/RESTAURACION.md)
 - [Bitácora completa del proyecto](docs/BITACORA.md)
 
