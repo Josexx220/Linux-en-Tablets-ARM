@@ -4,18 +4,50 @@ set -eu
 DRIVER=/sys/bus/serial/drivers/hci_uart_h5
 DEVICE=serial0-0
 
-systemctl stop bluetooth.service
-
+# BlueZ permanece activo. Solamente se reinicia el controlador UART.
 if [ -L "$DRIVER/$DEVICE" ]; then
-    echo "$DEVICE" > "$DRIVER/unbind"
+    printf '%s\n' "$DEVICE" > "$DRIVER/unbind"
+
+    for INTENTO in $(seq 1 20); do
+        [ ! -e /sys/class/bluetooth/hci0 ] && break
+        sleep 0.2
+    done
 fi
 
 sleep 2
-echo "$DEVICE" > "$DRIVER/bind"
 
-for I in 1 2 3 4 5 6 7 8 9 10; do
-    [ -d /sys/class/bluetooth/hci0 ] && break
-    sleep 1
+printf '%s\n' "$DEVICE" > "$DRIVER/bind"
+
+for INTENTO in $(seq 1 30); do
+    [ -e /sys/class/bluetooth/hci0 ] && break
+    sleep 0.2
 done
 
-systemctl start bluetooth.service
+if [ ! -e /sys/class/bluetooth/hci0 ]; then
+    echo "No reapareció hci0 después de reiniciar RTL8723BS" >&2
+    exit 1
+fi
+
+# Esperar a que BlueZ vuelva a registrar el controlador.
+for INTENTO in $(seq 1 20); do
+    if /usr/bin/bluetoothctl show >/dev/null 2>&1; then
+        break
+    fi
+    sleep 0.5
+done
+
+# Restaurar el estado útil de la tableta.
+for INTENTO in $(seq 1 10); do
+    if /usr/bin/bluetoothctl power on >/dev/null 2>&1 &&
+       /usr/bin/bluetoothctl pairable on >/dev/null 2>&1 &&
+       /usr/bin/bluetoothctl discoverable on >/dev/null 2>&1; then
+        break
+    fi
+    sleep 0.5
+done
+
+/usr/bin/bluetoothctl show | grep -q "Powered: yes"
+/usr/bin/bluetoothctl show | grep -q "Pairable: yes"
+/usr/bin/bluetoothctl show | grep -q "Discoverable: yes"
+
+exit 0
